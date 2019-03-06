@@ -1,0 +1,14 @@
+C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\bin\Debug\netcoreapp2.1\ProyectoFotoCore.deps.json
+C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\bin\Debug\netcoreapp2.1\ProyectoFotoCore.runtimeconfig.json
+C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\bin\Debug\netcoreapp2.1\ProyectoFotoCore.runtimeconfig.dev.json
+C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\bin\Debug\netcoreapp2.1\ProyectoFotoCore.dll
+C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.csprojAssemblyReference.cache
+C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.csproj.CoreCompileInputs.cache
+C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.RazorAssemblyInfo.cache
+C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.RazorAssemblyInfo.cs
+C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.AssemblyInfoInputs.cache
+C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.AssemblyInfo.cs
+C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.RazorTargetAssemblyInfo.cache
+C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\bin\Debug\netcoreapp2.1\ProyectoFotoCore.pdb
+C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.dll
+C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.pdb
