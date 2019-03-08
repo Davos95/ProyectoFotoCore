@@ -1,5 +1,7 @@
 ﻿
-using RepositorioPictureManager.Models;
+
+using ProyectoFotoCore.Data;
+using ProyectoFotoCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,30 +32,30 @@ GO
 */
 #endregion
 
-namespace RepositorioPictureManager.Repositories
+namespace ProyectoFotoCore.Repositories
 {
     public class RepositoryWork : IRepositoryWork
     {
-        EntityPictureManager entity;
+        IPictureManagerContext context;
 
-        public RepositoryWork(EntityPictureManager entity) {
-            this.entity = entity;
+        public RepositoryWork(IPictureManagerContext context) {
+            this.context = context;
         }
 
         public List<WORK> GetWORKs()
         {
-            List<WORK> works = this.entity.MOSTRARTRABAJOS().ToList();
+            List<WORK> works = this.context.GetWORKs();
             return works;
         }
 
         public void InsertWork(String name)
         {
-            this.entity.ADDTRABAJO(name);
+            this.context.InsertWork(name);
         }
 
         public void DeleteWork(int id)
         {
-            this.entity.DELETETRABAJO(id);
+            this.context.DeleteWork(id);
         }
 
     }

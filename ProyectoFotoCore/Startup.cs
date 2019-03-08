@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ProyectoFotoCore.Data;
+using ProyectoFotoCore.Repositories;
 
 namespace ProyectoFotoCore
 {
@@ -24,6 +26,14 @@ namespace ProyectoFotoCore
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IPictureManagerContext, PictureManagerContext>();
+
+            services.AddTransient<IRepositoryComision, RepositoryComision>();
+            services.AddTransient<IRepositoryLogin, RepositoryLogin>();
+            services.AddTransient<IRepositoryPartner, RepositoryPartner>();
+            services.AddTransient<IRepositoryPhoto, RepositoryPhoto>();
+            services.AddTransient<IRepositorySesion, RepositorySesion>();
+            services.AddTransient<IRepositoryWork, RepositoryWork>();
 
         }
 

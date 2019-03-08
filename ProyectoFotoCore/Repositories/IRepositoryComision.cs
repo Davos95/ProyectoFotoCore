@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
-using RepositoryPictureManager.Models;
+using ProyectoFotoCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace RepositorioPictureManager.Repositories
+namespace ProyectoFotoCore.Repositories
 {
     public interface IRepositoryComision
     {

@@ -1,4 +1,6 @@
-﻿using RepositorioPictureManager.Models;
+﻿
+using ProyectoFotoCore.Data;
+using ProyectoFotoCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,35 +72,35 @@ WHERE ID = @ID
 GO
 */
 #endregion
-namespace RepositorioPictureManager.Repositories
+namespace ProyectoFotoCore.Repositories
 {
     public class RepositorySesion : IRepositorySesion
     {
-        EntityPictureManager entity;
-        public RepositorySesion(EntityPictureManager entity)
+        IPictureManagerContext context;
+        public RepositorySesion(IPictureManagerContext context)
         {
-            this.entity = entity;
+            this.context = context;
         }
 
-        public List<SESION> GetSesions()
+        public List<SESSION> GetSesions()
         {
-            var sesion = this.entity.GETSESION();
+            var sesion = this.context.GetSesions();
             return sesion.ToList();
         }
 
         public void InsertSesion(String name, String description, DateTime date, int comision)
         {
-            this.entity.INSERTSESION(name, description, date, comision);
+            this.context.InsertSesion(name, description, date, comision);
         }
 
         public void DeleteSesion(int id)
         {
-            this.entity.DELETESESION(id);
+            this.context.DeleteSesion(id);
         }
 
-        public SESION GetSESIONID(int id)
+        public SESSION GetSESIONID(int id)
         {
-            SESION sesion = this.entity.GETSESIONID(id).FirstOrDefault();
+            SESSION sesion = this.context.GetSESIONID(id);
             return sesion;
         }
 
@@ -106,22 +108,22 @@ namespace RepositorioPictureManager.Repositories
         #region EDIT SESION
         public void AddPartnerWorkIntoSesion(int idSesion, int idPartner, int idWork)
         {
-            this.entity.ADDPARTNERWORKINTOSESION(idSesion, idPartner, idWork);
+            this.context.AddPartnerWorkIntoSesion(idSesion, idPartner, idWork);
         }
 
-        public List<GETPARTNERWORKBYSESION_Result> GetPartnerWorkBySesion(int idSesion)
+        public List<Worker_Session_Complex> GetPartnerWorkBySesion(int idSesion)
         {
-            return this.entity.GETPARTNERWORKBYSESION(idSesion).ToList();
+            return this.context.GetPartnerWorkBySesion(idSesion);
         }
 
         public void DeletePartnerWorkFromSesion(int idSesion, int idPartner, int idWork)
         {
-            this.entity.DELETEPARTERWORKFROMSESION(idSesion, idPartner, idWork);
+            this.context.DeletePartnerWorkFromSesion(idSesion, idPartner, idWork);
         }
 
         public void ModifySesion(int idSesion, String name, String desciption, DateTime date, int idComision)
         {
-            this.entity.MODIFYSESION(idSesion, name, desciption, date, idComision);
+            this.context.ModifySesion(idSesion, name, desciption, date, idComision);
         }
 
         #endregion

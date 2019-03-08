@@ -1,6 +1,6 @@
-﻿
-using RepositoryPictureManager.Data;
-using RepositoryPictureManager.Models;
+﻿using Microsoft.AspNetCore.Http;
+using ProyectoFotoCore.Data;
+using ProyectoFotoCore.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -71,7 +71,7 @@ GO
 */
 #endregion
 
-namespace RepositorioPictureManager.Repositories
+namespace ProyectoFotoCore.Repositories
 {
     public class RepositoryComision : IRepositoryComision
     {
@@ -83,30 +83,30 @@ namespace RepositorioPictureManager.Repositories
 
         public List<COMISION> GetCOMISIONS()
         {
-            var comisions = this.context.GETCOMISIONS().ToList();
+            var comisions = this.context.GetCOMISIONS();
             return comisions;
         }
 
         public COMISION GetComisionByID(int id)
         {
-            var comisions = GetCOMISIONS().Where(x => x.ID == id);
-            return comisions.FirstOrDefault();
+            var comision = this.context.GetComisionByID(id);
+            return comision;
         }
 
-        public void InsertComision(String name, String description, String folder, HttpPostedFileBase image, float price)
+        public void InsertComision(String name, String description, String folder, IFormFile image, float price)
         {
             String type = image.ContentType.Split('/')[1];
             String path = Path.Combine(folder, name + "." + type);
             System.Diagnostics.Debug.WriteLine(path);
-            context.INSERTCOMISION(name, description, path, price);
+            context.InsertComision(name, description, path, price);
         }
 
         public void DeleteComision(int id, String folder)
         {
             COMISION comision = GetComisionByID(id);
-            String file = comision.PHOTO.Split('\\')[1];
+            String file = comision.Photo.Split('\\')[1];
             File.Delete(folder+"\\"+file);
-            this.context.DELETECOMISION(id);
+            this.context.DeleteComision(id);
         }
 
         public void ModifyComision(int id, String name, String description, String folder, String image, float price)
@@ -115,7 +115,7 @@ namespace RepositorioPictureManager.Repositories
             {
                 image = folder + image;
             }
-            this.context.MODIFYCOMISION(id, name, image, description, price);
+            this.context.ModifyComision(id, name, image, description, price);
         }
 
         public void OrderComision(String [] order)
@@ -123,7 +123,7 @@ namespace RepositorioPictureManager.Repositories
             int numOrder = 0;
             foreach (String value in order)
             {
-                this.context.MODIFYORDERCOMISION(int.Parse(value), numOrder);
+                this.context.OrderComision(int.Parse(value), numOrder);
                 numOrder++;
             }
         }

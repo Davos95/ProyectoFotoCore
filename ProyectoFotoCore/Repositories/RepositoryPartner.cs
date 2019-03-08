@@ -1,5 +1,6 @@
-﻿using RepositorioPictureManager.Models;
-using RepositorioPictureManager.Repositories;
+﻿
+using ProyectoFotoCore.Data;
+using ProyectoFotoCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,37 +41,37 @@ GO
 */
 #endregion
 
-namespace RepositorioPictureManager.Repositories
+namespace ProyectoFotoCore.Repositories
 {
     public class RepositoryPartner : IRepositoryPartner
     {
-        EntityPictureManager entity;
+        IPictureManagerContext context;
 
-        public RepositoryPartner(EntityPictureManager entity)
+        public RepositoryPartner(IPictureManagerContext context)
         {
-            this.entity = entity;
+            this.context = context;
         }
         
         public List<WORKER> GetPartners()
         {
 
-            List<WORKER> participantes = this.entity.MOSTRARPARTICIPANTES().ToList();
+            List<WORKER> participantes = this.context.GetPartners();
             return participantes;
         }
 
         public void InsertPartner(String name, String contact, String urlContact)
         {
-            this.entity.ADDPARTICIPANTE(name, contact, urlContact);
+            this.context.InsertPartner(name, contact, urlContact);
         }
 
         public void RemovePartner(int id)
         {
-            this.entity.DELETEPARTICIPANTE(id);
+            this.context.RemovePartner(id);
         }
 
         public void UpdatePartner(int id, String name, String contact, String urlContact)
         {
-            this.entity.UPDATEPARTICIPANTE(id, name, contact, urlContact);
+            this.context.UpdatePartner(id, name, contact, urlContact);
         }
 
 

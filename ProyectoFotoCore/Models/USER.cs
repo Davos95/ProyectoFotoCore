@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RepositoryPictureManager.Models
+namespace ProyectoFotoCore.Models
 {
     [Table("USERS")]
     public class USER

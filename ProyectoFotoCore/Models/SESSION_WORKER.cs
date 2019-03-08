@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RepositoryPictureManager.Models
+namespace ProyectoFotoCore.Models
 {
     [Table("SESION_WORKER")]
     public class SESSION_WORKER

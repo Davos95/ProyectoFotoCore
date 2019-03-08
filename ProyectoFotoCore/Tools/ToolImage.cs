@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Web;
+using Microsoft.AspNetCore.Http;
 
-namespace RepositorioPictureManager.Repositories
+namespace ProyectoFotoCore.Repositories
 {
     public class ToolImage
     {
-        public static void UploadImage(HttpPostedFileBase image, String folder, String name)
+        public static void UploadImage(IFormFile image, String folder, String name)
         {
 
             String path = "";
@@ -23,8 +24,11 @@ namespace RepositorioPictureManager.Repositories
             {
                 path = Path.Combine(folder, image.FileName);
             }
-            
-            image.SaveAs(path);
+
+            using (var stream = new FileStream(path, FileMode.Create))
+            {
+                image.CopyToAsync(stream);
+            }
         }
         public static void RemoveImage(String image, String folder)
         {

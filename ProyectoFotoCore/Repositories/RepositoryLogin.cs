@@ -1,6 +1,5 @@
-﻿
-using RepositoryPictureManager.Data;
-using RepositoryPictureManager.Models;
+﻿using ProyectoFotoCore.Data;
+using ProyectoFotoCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +24,7 @@ GO
 */
 #endregion
 
-namespace RepositorioPictureManager.Repositories
+namespace ProyectoFotoCore.Repositories
 {
     public class RepositoryLogin : IRepositoryLogin
     {

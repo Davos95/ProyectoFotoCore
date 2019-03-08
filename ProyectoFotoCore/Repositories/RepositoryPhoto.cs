@@ -1,9 +1,11 @@
-﻿using System;
+﻿using ProyectoFotoCore.Data;
+using ProyectoFotoCore.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RepositorioPictureManager.Models;
+
 
 #region PROCEDURES
 /*
@@ -56,45 +58,45 @@ GO
 */
 #endregion
 
-namespace RepositorioPictureManager.Repositories
+namespace ProyectoFotoCore.Repositories
 {
     public class RepositoryPhoto : IRepositoryPhoto
     {
-        EntityPictureManager entity;
-        public RepositoryPhoto(EntityPictureManager entity)
+        IPictureManagerContext context;
+        public RepositoryPhoto(IPictureManagerContext context)
         {
-            this.entity = entity;
+            this.context = context;
         }
 
         public PHOTO GetPhotoById(int idPhoto)
         {
-            return this.entity.GETPHOTOBYID(idPhoto).FirstOrDefault();
+            return this.context.GetPhotoById(idPhoto);
         }
 
         public List<PHOTO> GetPhotos(int idSesion)
         {
-            return this.entity.GETPHOTOS(idSesion).ToList();
+            return this.context.GetPhotos(idSesion);
         }
 
         public void InsertPhoto(string name, int idSesion)
         {
-            this.entity.INSERTPHOTO(name, idSesion);
+            this.context.InsertPhoto(name, idSesion);
         }
 
         public void MovePhotosSesion(int idPhoto, int idSesion)
         {
-            this.entity.MOVEPHOTOS(idPhoto, idSesion);
+            this.context.MovePhotosSesion(idPhoto, idSesion);
         }
 
         public void OrderPhotos(int idPhoto, int orderNumber)
         {
-            this.entity.ORDERPHOTO(idPhoto, orderNumber);
+            this.context.OrderPhoto(idPhoto, orderNumber);
         }
 
 
         public void RemovePhotos(int idPhoto)
         {
-            this.entity.DELETEPHOTO(idPhoto);
+            this.context.RemovePhoto(idPhoto);
         }
     }
 }

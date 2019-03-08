@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using ProyectoFotoCore.Models;
-using RepositoryPictureManager.Models;
 
-namespace RepositoryPictureManager.Data
+namespace ProyectoFotoCore.Data
 {
     public class PictureManagerContext: DbContext, IPictureManagerContext
     {

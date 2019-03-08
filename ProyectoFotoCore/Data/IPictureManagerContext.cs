@@ -1,13 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProyectoFotoCore.Models;
-using RepositoryPictureManager.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RepositoryPictureManager.Data
+namespace ProyectoFotoCore.Data
 {
     public interface IPictureManagerContext
     {
