@@ -23,12 +23,11 @@ namespace ProyectoFotoCore.Data
         public DbSet<WORKER> Workers { get; set; }
         public DbSet<Worker_Session_Complex> ComplexWorkers { get; set; }
 
-        protected void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<SESSION_WORKER>().HasKey(c => new { c.IdSession, c.IdWork });
             modelBuilder.Entity<PHOTO>().HasKey(c => new { c.Id, c.Picture });
         }
-
 
 
         #region Comisions

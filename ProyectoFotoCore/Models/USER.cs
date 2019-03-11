@@ -13,7 +13,7 @@ namespace ProyectoFotoCore.Models
     {
         [Key]
         [Column("ID")]
-        public int Id { get; set; }
+        public String Id { get; set; }
         [Column("NICK")]
         public String Nick { get; set; }
         [Column("PWD")]
