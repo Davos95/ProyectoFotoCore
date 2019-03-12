@@ -15,10 +15,10 @@ namespace ProyectoFotoCore.Controllers
         PathProv prov;
         IRepositoryComision repo;
 
-        public ComisionController(IRepositoryComision repo, IHostingEnvironment environment)
+        public ComisionController(IRepositoryComision repo, PathProv prov)
         {
             this.repo = repo;
-            prov = new PathProv(environment);
+            this.prov = prov;
         }
         public IActionResult Comision()
         {
@@ -29,7 +29,7 @@ namespace ProyectoFotoCore.Controllers
         [HttpPost]
         public IActionResult Comision(String name, String description, IFormFile photo, float price, int? id, String option)
         {
-            String path = prov.MapPath(Folders.Comision, null);
+            String path = prov.MapPath(Folders.Comision);
 
             if (option == "ADD")
             {

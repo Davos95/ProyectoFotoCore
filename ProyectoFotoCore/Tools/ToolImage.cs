@@ -27,7 +27,12 @@ namespace ProyectoFotoCore.Tools
             using (var stream = new FileStream(finalPath, FileMode.Create))
             {
                 image.CopyToAsync(stream);
+
+                stream.Dispose();
+                stream.Close();
+                
             }
+            
         }
 
         public static void RemoveImage(String image, String folder)
@@ -35,6 +40,7 @@ namespace ProyectoFotoCore.Tools
             String path = Path.Combine(folder, image);
             File.Delete(path);
         }
+
         public static void MoveImage(String image, String originFolder, String destinationFolder)
         {
             String oPath = Path.Combine(originFolder, image);
@@ -42,15 +48,14 @@ namespace ProyectoFotoCore.Tools
             File.Move(oPath, dPath);
         }
 
-        public static void CreateFolder(String path, String name)
+        public static void CreateFolder(String path)
         {
-            String routeFolder = Path.Combine(path, name);
-            Directory.CreateDirectory(routeFolder);
+            Directory.CreateDirectory(path);
         }
-        public static void DeleteFolder(String path, String name)
+
+        public static void DeleteFolder(String path)
         {
-            String routeFolder = Path.Combine(path, name);
-            Directory.Delete(routeFolder, true);
+            Directory.Delete(path, true);
         }
 
         public static void RenameFolder(String path, String oldName, String newName)

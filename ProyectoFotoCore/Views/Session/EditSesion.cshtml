@@ -6,8 +6,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section styles {
-    <link href="~/Content/styleEditSession.css" rel="stylesheet" />
-
+    
+<link href="~/css/styleEditSession.css" rel="stylesheet" />
 }
 @section events{
     <script>
@@ -103,7 +103,7 @@
                                         <tr>
                                             <td>@w.Partner</td>
                                             <td>@w.Work</td>
-                                            <td><a href="@Url.Action("DeletePartnerWorkFromSesion","Sesion",new { idSesion = Model.Id, idPartner = w.IdPartner, idWork = w.IdWork })" style="float: right"><i class="material-icons" style="color: red;">backspace</i></a></td>
+                                            <td><a href="@Url.Action("DeletePartnerWorkFromSesion","Session",new { idSesion = Model.Id, idPartner = w.IdPartner, idWork = w.IdWork })" style="float: right"><i class="material-icons" style="color: red;">backspace</i></a></td>
                                         </tr>
                                     }
                                 }

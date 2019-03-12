@@ -31,9 +31,9 @@
                                         </div>
                                         <div class="card-title" style="color:black">@s.Name</div>
                                         <div class="card-action">
-                                            <a href="@Url.Action("DeleteSesion","Sesion",new { id = s.Id, name = s.Name  })" style="float: right"><i class="material-icons" style="color:red">delete</i></a>
-                                            <a href="@Url.Action("EditSesion","Sesion",new { id = s.Id })" style="float: right"><i class="material-icons" style="color: black;">edit</i></a>
-                                            <a href="@Url.Action("ManagePhotos","Sesion",new { idSesion = s.Id })" style="float: right"><i class="material-icons" style="color: black;">photo_library</i></a>
+                                            <a href="@Url.Action("DeleteSesion","Session",new { id = s.Id, name = s.Name  })" style="float: right"><i class="material-icons" style="color:red">delete</i></a>
+                                            <a href="@Url.Action("EditSesion","Session",new { id = s.Id })" style="float: right"><i class="material-icons" style="color: black;">edit</i></a>
+                                            <a href="@Url.Action("ManagePhotos","Session",new { idSesion = s.Id })" style="float: right"><i class="material-icons" style="color: black;">photo_library</i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -48,7 +48,7 @@
 </div>
 
 <div class="fixed-action-btn" style="margin-bottom:100px">
-    <a href="@Url.Action("CreateSesion","Sesion")" class="btn-floating btn-large green">
+    <a href="@Url.Action("CreateSesion","Session")" class="btn-floating btn-large green">
         <i class="large material-icons">add_circle</i>
     </a>
 </div>

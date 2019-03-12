@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ProyectoFotoCore.Data;
+using ProyectoFotoCore.Provider;
 using ProyectoFotoCore.Repositories;
 
 namespace ProyectoFotoCore
@@ -37,7 +38,7 @@ namespace ProyectoFotoCore
             services.AddTransient<IRepositoryPhoto, RepositoryPhoto>();
             services.AddTransient<IRepositorySesion, RepositorySesion>();
             services.AddTransient<IRepositoryWork, RepositoryWork>();
-
+            services.AddTransient<PathProv>();
 
 
             services.AddSession(options => {

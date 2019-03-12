@@ -228,7 +228,7 @@ namespace ProyectoFotoCore.Data
             String sql = "ADDPARTNERWORKINTOSESION @IDSESION,@IDPARTER,@IDWORK";
             SqlParameter pamIdSession = new SqlParameter("@IDSESION", idSesion);
             SqlParameter pamIdPartner = new SqlParameter("@IDPARTER", idPartner);
-            SqlParameter pamIdWork = new SqlParameter("@IDWROK", idWork);
+            SqlParameter pamIdWork = new SqlParameter("@IDWORK", idWork);
 
             this.Database.ExecuteSqlCommand(sql, pamIdSession, pamIdPartner, pamIdWork);
         }
@@ -242,7 +242,7 @@ namespace ProyectoFotoCore.Data
 
         public void DeletePartnerWorkFromSesion(int idSesion, int idPartner, int idWork)
         {
-            String sql = "DELETEPARTNERWORKFROMSESION @ID,@IDPARTNER,@IDWORK";
+            String sql = "DELETEPARTERWORKFROMSESION @ID,@IDPARTNER,@IDWORK";
             SqlParameter pamIdSesion = new SqlParameter("@ID", idSesion);
             SqlParameter pamIdPartner = new SqlParameter("@IDPARTNER", idPartner);
             SqlParameter pamIdWork = new SqlParameter("@IDWORK", idWork);

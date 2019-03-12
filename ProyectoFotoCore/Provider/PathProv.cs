@@ -21,7 +21,7 @@ namespace ProyectoFotoCore.Provider
             this.environment = environment;
         }
 
-        public String MapPath(Folders folder, String sessionName)
+        public String MapPath(Folders folder)
         {
             String path;
             
@@ -33,17 +33,28 @@ namespace ProyectoFotoCore.Provider
                 case Folders.Comision: foldername = "comision"; break;
                 case Folders.Session: foldername = "session"; break;
             }
-            if (foldername == "session")
-            {
-                path = Path.Combine(this.environment.WebRootPath, root, foldername, sessionName);
-            } else
-            {
-                path = Path.Combine(this.environment.WebRootPath, root, foldername);
-            }
+       
+            path = Path.Combine(this.environment.WebRootPath, root, foldername);
             
             return path;
         }
-        
-        
+
+        public String MapPath(Folders folder, String SessionName)
+        {
+            String path;
+
+            String root = "images";
+            String foldername = "";
+
+            switch (folder)
+            {
+                case Folders.Session: foldername = "session"; break;
+            }
+            
+            path = Path.Combine(this.environment.WebRootPath, root, foldername, SessionName);
+                
+            return path;
+        }
+
     }
 }

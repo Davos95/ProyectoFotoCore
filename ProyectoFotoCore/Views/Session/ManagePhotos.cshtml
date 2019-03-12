@@ -4,8 +4,9 @@
 @{
     ViewBag.Title = "ManagePhotos";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Sesion = " "/*Request["idSesion"]*/;
+    ViewBag.Sesion = ViewContext.RouteData.Values["idSesion"]; /*Request["idSesion"]*/
 }
+
 @section styles{
     <style>
         .btn {
@@ -13,31 +14,26 @@
             margin: 1.5em 0;
             height: 3rem;
         }
-
         .img {
             width: 240px;
             height: 240px;
             object-fit: contain;
         }
-
         .gallery .card .card-content {
             padding: 1px;
         }
-
         .check {
             visibility: hidden;
         }
-
         .card-image {
             margin: 1rem;
         }
-
         .textPhoto {
             text-align: center;
         }
     </style>
 
-    <link href="~/Content/PreviewImage.css" rel="stylesheet" />
+    <link href="~/css/PreviewImage.css" rel="stylesheet" />
 }
 
 @section events{
@@ -74,7 +70,7 @@
                 $("input[type=checkbox]:checked").each(function () {
                     array.push($(this).attr("id"));
                 });
-                var sesion = @ViewBag.Sesion;
+                var sesion = "";//@ViewBag.Sesion;
                 console.log(array);
                 console.log(sesion);
 
@@ -124,7 +120,7 @@
                 $("input[type=checkbox]:checked").each(function () {
                     array.push($(this).attr("id"));
                 });
-                var sesion = @ViewBag.Sesion;
+                var sesion = "";//@ViewBag.Sesion;
                 var destinationSession = $("#sessions").val();
 
                 console.log(array);
@@ -204,7 +200,7 @@
         });
 
     </script>
-    <script src="~/Scripts/scriptUploadImages.js"></script>
+    <script src="~/js/scriptUploadImages.js"></script>
 }
 
 <div class="row" style="padding: 1rem 1.2rem;">
@@ -219,7 +215,7 @@
                         <div class="card col s12">
                             <div id="div_@p.Id" class="box">
                                 <div class="card-image">
-                                    <input type="checkbox" id="@p.Id" /><label for="@p.Id"><img src="~/images/Sesion/@ViewBag.SessionName/@p.Picture" draggable="true" id="img_@p.Id" class="img" /></label>
+                                    <input type="checkbox" id="@p.Id" /><label for="@p.Id"><img src="~/images/Session/@ViewBag.SessionName/@p.Picture" draggable="true" id="img_@p.Id" class="img" /></label>
                                     @*<div style="position: relative; width: 0; height: 0">
                                             <div class="check">
                                                 <img src="~/images/check.png" />

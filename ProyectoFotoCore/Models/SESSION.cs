@@ -20,7 +20,7 @@ namespace ProyectoFotoCore.Models
         [Column("DESCRIPTION")]
         public String Description { get; set; }
         [Column("IDPHOTO")]
-        public int IdPhoto {get; set;}
+        public int? IdPhoto {get; set;}
         [Column("DATESESION")]
         public DateTime DateSesion { get; set; }
         [Column("IDCOMISION")]
