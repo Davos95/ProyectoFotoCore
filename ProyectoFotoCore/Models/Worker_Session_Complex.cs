@@ -11,6 +11,7 @@ namespace ProyectoFotoCore.Models
     {
         [Key]
         [Column("IDPARTNER")]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IdPartner { get; set; }
         [Column("PARTNER")]
         public String Partner { get; set; }

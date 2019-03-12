@@ -10,6 +10,7 @@ namespace ProyectoFotoCore.Models
     [Table("PHOTO")]
     public class PHOTO
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("ID")]
         public int Id { get; set; }
         [Column("PICTURE")]

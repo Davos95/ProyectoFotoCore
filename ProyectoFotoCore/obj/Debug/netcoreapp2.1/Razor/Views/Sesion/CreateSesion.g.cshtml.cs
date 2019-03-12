@@ -67,7 +67,7 @@ using ProyectoFotoCore.Models;
                 WriteLiteral("\r\n\r\n    ");
                 EndContext();
                 BeginContext(171, 65, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5dfc7b133f4c4e5290df1165cf7627b5", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "bdf18c81a57842eabe233082fe3d6222", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -104,7 +104,7 @@ using ProyectoFotoCore.Models;
                 ");
             EndContext();
             BeginContext(646, 1681, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "15373c91fff34edb8ff950726d7a9846", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "faca32c565ca474b9ea10f7958443d62", async() => {
                 BeginContext(666, 892, true);
                 WriteLiteral(@"
                     <div class=""input-field"">
@@ -123,7 +123,7 @@ using ProyectoFotoCore.Models;
                             ");
                 EndContext();
                 BeginContext(1558, 56, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b8c123559d454a1f9683593e285d01d0", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4fd3d81110b9467dad13f17985b0875f", async() => {
                     BeginContext(1584, 21, true);
                     WriteLiteral("Selecciona una opción");
                     EndContext();
@@ -160,7 +160,7 @@ using ProyectoFotoCore.Models;
                 WriteLiteral("                                    ");
                 EndContext();
                 BeginContext(1830, 38, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0018191b83c94ab488a51ac795da6452", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ec3b79b3698349d5a0d1f7a3c0ce08ea", async() => {
                     BeginContext(1853, 6, false);
 #line 45 "C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\Views\Sesion\CreateSesion.cshtml"
                                                      Write(c.Name);

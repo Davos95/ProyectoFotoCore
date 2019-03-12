@@ -10,8 +10,10 @@ namespace ProyectoFotoCore.Models
     [Table("SESION_WORKER")]
     public class SESSION_WORKER
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("IDSESION")]
         public int IdSession { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("IDWORKER")]
         public int IdWorker { get; set; }
         [Column("IDWORK")]

@@ -12,6 +12,7 @@ namespace ProyectoFotoCore.Models
     public class SESSION
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("ID")]
         public int Id { get; set; }
         [Column("NAME")]

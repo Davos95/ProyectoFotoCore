@@ -13,6 +13,7 @@ namespace ProyectoFotoCore.Models
     {
         [Key]
         [Column("ID")]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
         [Column("NAME")]
         public String Name { get; set; }
@@ -21,7 +22,7 @@ namespace ProyectoFotoCore.Models
         [Column("ORDERCOMISION")]
         public int OrderComision { get; set; }
         [Column("PRICE")]
-        public float Price { get; set; }
+        public double Price { get; set; }
         [Column("PHOTO")]
         public String Photo { get; set; }
 

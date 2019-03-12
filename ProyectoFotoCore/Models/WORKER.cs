@@ -13,6 +13,7 @@ namespace ProyectoFotoCore.Models
     {
         [Key]
         [Column("ID")]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Column("NAME")]

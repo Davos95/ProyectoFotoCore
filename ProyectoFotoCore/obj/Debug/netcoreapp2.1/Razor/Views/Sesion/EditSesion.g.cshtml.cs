@@ -70,7 +70,7 @@ using ProyectoFotoCore.Models;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(165, 63, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5661759e14a64208be968ccf1f330814", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "697c71f6ecd540b4a532341ff8e72571", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -122,7 +122,7 @@ using ProyectoFotoCore.Models;
             WriteLiteral("\r\n<div class=\"row\">\r\n    <div class=\"col s12 m3 l3 xl3\">\r\n        <div class=\"card\">\r\n            <div class=\"card-content\">\r\n                ");
             EndContext();
             BeginContext(1630, 1881, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9100bbcf63914ca79c86ade3176708de", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c1e42ada6f5940cfadd484af773dfbe8", async() => {
                 BeginContext(1650, 113, true);
                 WriteLiteral("\r\n                    <div class=\"input-field\">\r\n                        <input type=\"text\" name=\"name\" id=\"name\"");
                 EndContext();
@@ -177,7 +177,7 @@ WriteAttributeValue("", 2236, ViewBag.Date, 2236, 13, false);
                 WriteLiteral("                                    ");
                 EndContext();
                 BeginContext(2750, 47, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "32dbbcc7502a4e10914850675164255c", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b041841c546b418d9e830349967de9ad", async() => {
                     BeginContext(2782, 6, false);
 #line 66 "C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\Views\Sesion\EditSesion.cshtml"
                                                               Write(c.Name);
@@ -223,7 +223,7 @@ WriteAttributeValue("", 2236, ViewBag.Date, 2236, 13, false);
                 WriteLiteral("                                    ");
                 EndContext();
                 BeginContext(2943, 38, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7a3c757810e249f59d99e63ea4e65490", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c86783fe152f4d7a860394951223db7f", async() => {
                     BeginContext(2966, 6, false);
 #line 70 "C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\Views\Sesion\EditSesion.cshtml"
                                                      Write(c.Name);
@@ -363,7 +363,7 @@ WriteAttributeValue("", 4579, Url.Action("DeletePartnerWorkFromSesion","Sesion",
             WriteLiteral("                            </tbody>\r\n                        </table>\r\n                    </div>\r\n                    <div class=\"col m1\">\r\n                        <div class=\"divAddButton\">\r\n                            ");
             EndContext();
             BeginContext(5138, 494, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fadc35e93f9c4cc68b610bbb9dad1711", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "33fda6c3f1b344eab81aebcb9a28e8aa", async() => {
                 BeginContext(5158, 70, true);
                 WriteLiteral("\r\n                                <input type=\"hidden\" name=\"idSesion\"");
                 EndContext();

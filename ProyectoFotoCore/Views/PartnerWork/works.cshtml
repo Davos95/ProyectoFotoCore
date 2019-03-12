@@ -6,7 +6,7 @@
 }
 @section styles {
 
-    <link href="~/Content/stylePartners.css" rel="stylesheet" />
+    <link href="~/css/stylePartners.css" rel="stylesheet" />
 }
 
 <div class="row " style="padding: 1rem 1.2rem;">
@@ -30,10 +30,10 @@
                 <tbody>
                     @foreach (WORK w in Model)
                     {
-                        <tr>
-                            <td>@w.Name</td>
-                            <td><a href="@Url.Action("DeleteWork", "PartnerWork", new { id = w.Id})"><i class="material-icons" style="color:red; float:right">backspace</i></a></td>
-                        </tr>
+                    <tr>
+                        <td>@w.Name</td>
+                        <td><a href="@Url.Action("DeleteWork", "PartnerWork", new { id = w.Id})"><i class="material-icons" style="color:red; float:right">backspace</i></a></td>
+                    </tr>
                     }
                 </tbody>
             </table>
