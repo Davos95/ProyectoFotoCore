@@ -133,8 +133,9 @@ namespace ProyectoFotoCore.Repositories
         {
             this.context.RemovePhoto(idPhoto);
         }
+
         #region Favorites
-        public List<PHOTO> GetFavorites()
+        public List<PHOTO_COMPLEX> GetFavorites()
         {
             return this.context.GetFavorites();
         }

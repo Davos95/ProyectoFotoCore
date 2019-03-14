@@ -58,7 +58,7 @@ namespace ProyectoFotoCore.Controllers
 
         public ActionResult DeleteSesion(int id, String name)
         {
-            String path = prov.MapPath(Folders.Session);
+            String path = prov.MapPath(Folders.Session, name);
             ToolImage.DeleteFolder(path);
             this.repoSesion.DeleteSesion(id);
 
@@ -122,6 +122,11 @@ namespace ProyectoFotoCore.Controllers
             return View(this.repoPhoto.GetPhotos(idSesion));
         }
 
+        public IActionResult FavoritePhotos()
+        {
+            List<PHOTO_COMPLEX> favoritePhotos = this.repoPhoto.GetFavorites();
+            return View(favoritePhotos);
+        }
 
     }
 }

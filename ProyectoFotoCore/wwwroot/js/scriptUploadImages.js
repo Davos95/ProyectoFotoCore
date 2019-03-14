@@ -82,7 +82,7 @@ function uploadData(arrayImages, sesion) {
                     cancelButtonText: 'Cancelar'
                 }).then((result) => {
                     if (result.value) {
-                        window.location = '/Sesion/ManagePhotos?idSesion=' + sesion;
+                        window.location = '/Session/ManagePhotos?idSesion=' + sesion;
 
                         //$("#divLink").html('<a id="goSession" href="/Sesion/ManagePhotos?idSesion='+sesion+'">link</a>');
                         //$("#goSession").click();

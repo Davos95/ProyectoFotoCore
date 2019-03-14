@@ -38,7 +38,6 @@ G:\Proyectos\ProyectoFotoCore\ProyectoFotoCore\bin\Debug\netcoreapp2.1\ProyectoF
 G:\Proyectos\ProyectoFotoCore\ProyectoFotoCore\bin\Debug\netcoreapp2.1\ProyectoFotoCore.pdb
 G:\Proyectos\ProyectoFotoCore\ProyectoFotoCore\bin\Debug\netcoreapp2.1\ProyectoFotoCore.Views.dll
 G:\Proyectos\ProyectoFotoCore\ProyectoFotoCore\bin\Debug\netcoreapp2.1\ProyectoFotoCore.Views.pdb
-G:\Proyectos\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.csprojAssemblyReference.cache
 G:\Proyectos\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.csproj.CoreCompileInputs.cache
 G:\Proyectos\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.RazorAssemblyInfo.cache
 G:\Proyectos\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.RazorAssemblyInfo.cs
@@ -72,3 +71,5 @@ C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\ne
 C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\Razor\Views\Session\EditSesion.g.cshtml.cs
 C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\Razor\Views\Session\ManagePhotos.g.cshtml.cs
 C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\Razor\Views\Session\Sesion.g.cshtml.cs
+G:\Proyectos\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\Razor\Views\Session\FavoritePhotos.g.cshtml.cs
+G:\Proyectos\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.csprojAssemblyReference.cache

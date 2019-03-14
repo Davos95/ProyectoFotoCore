@@ -23,12 +23,20 @@
         }
         .check {
             visibility: hidden;
+            padding: 0 0 0 0.5rem;
         }
         .card-image {
             margin: 1rem;
         }
         .textPhoto {
             text-align: center;
+        }
+        .setFavorite{
+            cursor: pointer;
+        }
+        .triggerImage {
+            margin-left: 3.5em;
+            cursor: pointer;
         }
     </style>
 
@@ -233,7 +241,6 @@
         });
 
     </script>
-    <script src="~/js/scriptUploadImages.js"></script>
 }
 
 <div class="row" style="padding: 1rem 1.2rem;">
@@ -258,6 +265,7 @@
                                 <div class="card-content">
                                     <div class="card-action">
                                         <div class="textPhoto">
+
                                             <span class="triggerImage">@p.Picture</span>
                                             <i class="material-icons check" style="color:green; float: right">check</i>
                                             @if (p.Favorite)
@@ -266,8 +274,9 @@
                                             }
                                             else
                                             {
-                                                <a><i class="material-icons setFavorite" style="color:red; float: right" data-value="@p.Id">favorite_border</i></a>
+                                                <i class="material-icons setFavorite" style="color:red; float: right" data-value="@p.Id">favorite_border</i>
                                             }
+
                                         </div>
                                     </div>
                                 </div>

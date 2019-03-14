@@ -111,5 +111,18 @@ namespace ProyectoFotoCore.Controllers
             this.repoPhoto.UndoFavorite(idPhoto);
             return Json(true);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> OrderFavorites()
+        {
+            String idPhotos = Request.Form["idPhotos"];
+            String[] idArray = idPhotos.Split(',');
+
+            for (int i = 0; i < idArray.Length; i++)
+            {
+                this.repoPhoto.OrderPhotos(int.Parse(idArray[i]), i);
+            }
+            return Json(true);
+        }
     }
 }

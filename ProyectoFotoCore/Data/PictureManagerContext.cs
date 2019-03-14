@@ -22,6 +22,7 @@ namespace ProyectoFotoCore.Data
         public DbSet<WORK> Works { get; set; }
         public DbSet<WORKER> Workers { get; set; }
         public DbSet<Worker_Session_Complex> ComplexWorkers { get; set; }
+        public DbSet<PHOTO_COMPLEX> ComplexPhoto { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -294,10 +295,10 @@ namespace ProyectoFotoCore.Data
         #endregion
 
         #region Favorite
-        public List<PHOTO> GetFavorites()
+        public List<PHOTO_COMPLEX> GetFavorites()
         {
             String sql = "GETFAVORITES";
-            return this.Photos.FromSql(sql).ToList();
+            return this.ComplexPhoto.FromSql(sql).ToList();
         }
 
         public void SetFavorite(int idPhoto)

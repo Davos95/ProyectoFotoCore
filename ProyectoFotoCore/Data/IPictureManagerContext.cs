@@ -69,7 +69,7 @@ namespace ProyectoFotoCore.Data
         #endregion
 
         #region Favorite
-        List<PHOTO> GetFavorites();
+        List<PHOTO_COMPLEX> GetFavorites();
         void SetFavorite(int idPhoto);
         void UndoFavorite(int idPhoto);
         void OrderFavorite(int idPhoto, int orderFavorite);
