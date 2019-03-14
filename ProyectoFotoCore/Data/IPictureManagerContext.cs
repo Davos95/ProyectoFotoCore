@@ -67,5 +67,12 @@ namespace ProyectoFotoCore.Data
         void InsertWork(String name);
         void DeleteWork(int id);
         #endregion
+
+        #region Favorite
+        List<PHOTO> GetFavorites();
+        void SetFavorite(int idPhoto);
+        void UndoFavorite(int idPhoto);
+        void OrderFavorite(int idPhoto, int orderFavorite);
+        #endregion
     }
 }

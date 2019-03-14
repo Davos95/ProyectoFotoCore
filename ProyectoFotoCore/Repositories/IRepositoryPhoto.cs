@@ -16,5 +16,10 @@ namespace ProyectoFotoCore.Repositories
         void OrderPhotos(int idPhoto, int orderNumber);
         void RemovePhotos(int idPhoto);
         PHOTO GetPhotoById(int idPhoto);
+
+        List<PHOTO> GetFavorites();
+        void SetFavorite(int idPhoto);
+        void UndoFavorite(int idPhoto);
+        void OrderFavorite(int idPhoto, int orderFavorite);
     }
 }

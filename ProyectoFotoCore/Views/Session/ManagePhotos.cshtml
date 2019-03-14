@@ -4,7 +4,6 @@
 @{
     ViewBag.Title = "ManagePhotos";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Sesion = ViewContext.RouteData.Values["idSesion"]; /*Request["idSesion"]*/
 }
 
 @section styles{
@@ -70,7 +69,7 @@
                 $("input[type=checkbox]:checked").each(function () {
                     array.push($(this).attr("id"));
                 });
-                var sesion = "";//@ViewBag.Sesion;
+                var sesion = @ViewBag.IdSesion;
                 console.log(array);
                 console.log(sesion);
 
@@ -120,7 +119,7 @@
                 $("input[type=checkbox]:checked").each(function () {
                     array.push($(this).attr("id"));
                 });
-                var sesion = "";//@ViewBag.Sesion;
+                var sesion = @ViewBag.IdSesion;
                 var destinationSession = $("#sessions").val();
 
                 console.log(array);
@@ -148,6 +147,40 @@
                     }
                 });
 
+            });
+
+            $(".setFavorite").click(function () {
+
+                var id = $(this).data("value");
+                var formData = new FormData();
+                var objet = $(this);
+                formData.append("idPhoto", id);
+
+                if (objet.text() != "favorite") {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Images/SetFavorite",
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        success: function (data) {
+                            objet.text("favorite");
+                        }
+                    });
+                } else {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Images/UndoFavorite",
+                        data: formData,
+                        dataType: "json",
+                        contentType: false,
+                        processData: false,
+                        success: function (data) {
+                            objet.text("favorite_border");
+                        }
+                    });
+                }
+                 
             });
 
             var origenCaja = "";
@@ -227,6 +260,14 @@
                                         <div class="textPhoto">
                                             <span class="triggerImage">@p.Picture</span>
                                             <i class="material-icons check" style="color:green; float: right">check</i>
+                                            @if (p.Favorite)
+                                            {
+                                                <i class="material-icons setFavorite" style="color:red; float: right" data-value="@p.Id">favorite</i>
+                                            }
+                                            else
+                                            {
+                                                <a><i class="material-icons setFavorite" style="color:red; float: right" data-value="@p.Id">favorite_border</i></a>
+                                            }
                                         </div>
                                     </div>
                                 </div>

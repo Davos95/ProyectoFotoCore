@@ -98,6 +98,7 @@ namespace ProyectoFotoCore.Controllers
             SESSION sesion = this.repoSesion.GetSESIONID(idSesion);
             ViewBag.Date = sesion.DateSesion.ToString("yyyy-MM-dd");
             ViewBag.Comision = this.repoComision.GetCOMISIONS().ToList();
+
             ViewBag.Partner = this.repoPartner.GetPartners().ToList();
             ViewBag.Work = this.repoWork.GetWORKs().ToList();
             ViewBag.Workers = this.repoSesion.GetPartnerWorkBySesion(idSesion);
@@ -117,7 +118,10 @@ namespace ProyectoFotoCore.Controllers
         {
             ViewBag.SessionName = this.repoSesion.GetSESIONID(idSesion).Name;
             ViewBag.Sessions = this.repoSesion.GetSesions().Where(x => x.Id != idSesion).ToList();
+            ViewBag.IdSesion = idSesion;
             return View(this.repoPhoto.GetPhotos(idSesion));
         }
+
+
     }
 }

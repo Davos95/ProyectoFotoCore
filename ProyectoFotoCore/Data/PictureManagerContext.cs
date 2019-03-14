@@ -289,6 +289,35 @@ namespace ProyectoFotoCore.Data
 
             this.Database.ExecuteSqlCommand(sql, pamId);
         }
+
+
         #endregion
+
+        #region Favorite
+        public List<PHOTO> GetFavorites()
+        {
+            String sql = "GETFAVORITES";
+            return this.Photos.FromSql(sql).ToList();
+        }
+
+        public void SetFavorite(int idPhoto)
+        {
+            String sql = "SETFAVORITE @IDPHOTO";
+            SqlParameter pamId = new SqlParameter("@IDPHOTO", idPhoto);
+            this.Database.ExecuteSqlCommand(sql, pamId);
+        }
+
+        public void UndoFavorite(int idPhoto)
+        {
+            String sql = "UNDOFAVORITE @IDPHOTO";
+            SqlParameter pamId = new SqlParameter("@IDPHOTO", idPhoto);
+            this.Database.ExecuteSqlCommand(sql, pamId);
+        }
+
+        public void OrderFavorite(int idPhoto, int orderFavorite)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion 
     }
 }

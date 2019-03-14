@@ -55,6 +55,37 @@ AS
 	
 GO
 
+
+CREATE PROCEDURE GETFAVORITES
+AS
+	SELECT * FROM PHOTO
+	WHERE FAVORITE = 1
+	ORDER BY ORDERFAVORITE
+GO
+
+CREATE PROCEDURE SETFAVORITE 
+(@IDPHOTO INT)
+AS
+	DECLARE @COUNT INT
+	SELECT @COUNT = COUNT(*) FROM PHOTO WHERE FAVORITE = 1
+
+	UPDATE PHOTO SET FAVORITE = 1, ORDERFAVORITE = @COUNT WHERE ID = @IDPHOTO
+GO
+
+CREATE PROCEDURE UNDOFAVORITE 
+(@IDPHOTO INT)
+AS
+UPDATE PHOTO SET FAVORITE = 0 WHERE ID = @IDPHOTO
+GO
+
+CREATE PROCEDURE ORDERFAVORITE
+(@IDPHOTO INT, @ORDER INT)
+AS
+UPDATE PHOTO SET ORDERFAVORITE = @ORDER WHERE ID = @IDPHOTO
+GO
+
+
+
 */
 #endregion
 
@@ -67,6 +98,8 @@ namespace ProyectoFotoCore.Repositories
         {
             this.context = context;
         }
+
+       
 
         public PHOTO GetPhotoById(int idPhoto)
         {
@@ -88,6 +121,8 @@ namespace ProyectoFotoCore.Repositories
             this.context.MovePhotosSesion(idPhoto, idSesion);
         }
 
+      
+
         public void OrderPhotos(int idPhoto, int orderNumber)
         {
             this.context.OrderPhoto(idPhoto, orderNumber);
@@ -98,5 +133,27 @@ namespace ProyectoFotoCore.Repositories
         {
             this.context.RemovePhoto(idPhoto);
         }
+        #region Favorites
+        public List<PHOTO> GetFavorites()
+        {
+            return this.context.GetFavorites();
+        }
+
+        public void SetFavorite(int idPhoto)
+        {
+            this.context.SetFavorite(idPhoto);
+        }
+
+        public void UndoFavorite(int idPhoto)
+        {
+            this.context.UndoFavorite(idPhoto);
+        }
+
+        public void OrderFavorite(int idPhoto, int orderFavorite)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

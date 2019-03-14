@@ -11,7 +11,7 @@ namespace ProyectoFotoCore.Tools
 
     public class ToolImage
     {        
-        public static void UploadImage(IFormFile image, String path, String name)
+        public async static Task UploadImage(IFormFile image, String path, String name)
         {
             String finalPath = "";
             if (name != null)
@@ -26,7 +26,7 @@ namespace ProyectoFotoCore.Tools
 
             using (var stream = new FileStream(finalPath, FileMode.Create))
             {
-                image.CopyToAsync(stream);
+                await image.CopyToAsync(stream);
 
                 stream.Dispose();
                 stream.Close();

@@ -19,5 +19,7 @@ namespace ProyectoFotoCore.Models
         public int IdSession { get; set; }
         [Column("ORDERPHOTO")]
         public int OrderPhoto { get; set; }
+        [Column("FAVORITE")]
+        public bool Favorite { get; set; }
     }
 }

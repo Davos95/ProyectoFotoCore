@@ -38,7 +38,7 @@ namespace ProyectoFotoCore.Controllers
 
             foreach (IFormFile file in Request.Form.Files)
             {
-                ToolImage.UploadImage(file, path, null);
+                await ToolImage.UploadImage(file, path, null);
                 this.repoPhoto.InsertPhoto(file.FileName, idSesion);
             }
 
@@ -47,12 +47,14 @@ namespace ProyectoFotoCore.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteImages(int idSesion)
         {
-            String[] idPhotos = Request.Form["idPhotos"].ToArray();
+            String idPhotos = Request.Form["idPhotos"];
+
+            String[] idArray = idPhotos.Split(',');
 
             String sessionName = this.repoSesion.GetSESIONID(idSesion).Name;
             String path = prov.MapPath(Folders.Session, sessionName);
 
-            foreach (String id in idPhotos)
+            foreach (String id in idArray)
             {
                 String namePhoto = this.repoPhoto.GetPhotoById(int.Parse(id)).Picture;
                 this.repoPhoto.RemovePhotos(int.Parse(id));
@@ -65,10 +67,12 @@ namespace ProyectoFotoCore.Controllers
         [HttpPost]
         public async Task<IActionResult> OrderPhotos()
         {
-            String[] idPhotos = Request.Form["idPhotos"].ToArray();
-            for (int i = 0; i < idPhotos.Length; i++)
+            String idPhotos = Request.Form["idPhotos"];
+            String[] idArray = idPhotos.Split(',');
+
+            for (int i = 0; i < idArray.Length; i++)
             {
-                this.repoPhoto.OrderPhotos(int.Parse(idPhotos[i]), i);
+                this.repoPhoto.OrderPhotos(int.Parse(idArray[i]), i);
             }
             return Json(true);
         }
@@ -76,7 +80,8 @@ namespace ProyectoFotoCore.Controllers
         [HttpPost]
         public async Task<IActionResult> MovePhotos(int session)
         {
-            String[] idPhotos = Request.Form["idPhotos"].ToArray();
+            String idPhotos = Request.Form["idPhotos"];
+            String[] idArray = idPhotos.Split(',');
             String oldSession = Request.Form["oldSession"];
 
             String sessionName = this.repoSesion.GetSESIONID(session).Name;
@@ -84,7 +89,7 @@ namespace ProyectoFotoCore.Controllers
             String oldFolder = prov.MapPath(Folders.Session, oldSessionName);
             String destinationFolder = prov.MapPath(Folders.Session, sessionName);
 
-            foreach (String id in idPhotos)
+            foreach (String id in idArray)
             {
                 int idPhoto = int.Parse(id);
                 String imageName = this.repoPhoto.GetPhotoById(idPhoto).Picture;
@@ -94,5 +99,17 @@ namespace ProyectoFotoCore.Controllers
             return Json(true);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> SetFavorite(int idPhoto)
+        {
+            this.repoPhoto.SetFavorite(idPhoto);
+            return Json(true);
+        }
+        [HttpPost]
+        public async Task<IActionResult> UndoFavorite(int idPhoto)
+        {
+            this.repoPhoto.UndoFavorite(idPhoto);
+            return Json(true);
+        }
     }
 }
