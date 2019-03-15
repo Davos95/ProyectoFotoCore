@@ -233,7 +233,18 @@
                     $("#" + origenCaja + ">.card-content>.card-action>div>span").text(destinoTextoImagen);
                     $("#" + destinoCaja + ">.card-content>.card-action>div>span").text(origenTextoImagen);
 
-                    console.log(origenTextoImagen);
+                    /* Intercambio de  iconos e ids booleanos */
+                    var origenBool = $("#" + origenCaja + ">.card-content>.card-action>div>.setFavorite").text();
+                    var destinoBool = $("#" + destinoCaja + ">.card-content>.card-action>div>.setFavorite").text();
+
+                    $("#" + origenCaja + ">.card-content>.card-action>div>.setFavorite").text(destinoBool);
+                    $("#" + destinoCaja + ">.card-content>.card-action>div>.setFavorite").text(origenBool);
+
+                    var origenDataVal = $("#" + origenCaja + ">.card-content>.card-action>div>.setFavorite").data("value");
+                    var destinoDataVal = $("#" + destinoCaja + ">.card-content>.card-action>div>.setFavorite").data("value");
+
+                    $("#" + origenCaja + ">.card-content>.card-action>div>.setFavorite").data("value", destinoDataVal);
+                    $("#" + destinoCaja + ">.card-content>.card-action>div>.setFavorite").data("value", origenDataVal);
 
                     flag = true;
                 });

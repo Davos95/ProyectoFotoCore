@@ -152,7 +152,7 @@ namespace ProyectoFotoCore.Repositories
 
         public void OrderFavorite(int idPhoto, int orderFavorite)
         {
-            throw new NotImplementedException();
+            this.context.OrderFavorite(idPhoto, orderFavorite);
         }
 
         #endregion

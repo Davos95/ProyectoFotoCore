@@ -120,7 +120,7 @@ namespace ProyectoFotoCore.Controllers
 
             for (int i = 0; i < idArray.Length; i++)
             {
-                this.repoPhoto.OrderPhotos(int.Parse(idArray[i]), i);
+                this.repoPhoto.OrderFavorite(int.Parse(idArray[i]), i);
             }
             return Json(true);
         }

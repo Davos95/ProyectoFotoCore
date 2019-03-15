@@ -317,7 +317,10 @@ namespace ProyectoFotoCore.Data
 
         public void OrderFavorite(int idPhoto, int orderFavorite)
         {
-            throw new NotImplementedException();
+            String sql = "ORDERFAVORITE @IDPHOTO,@ORDERFAVORITE";
+            SqlParameter pamId = new SqlParameter("@IDPHOTO", idPhoto);
+            SqlParameter pamOrder = new SqlParameter("@ORDERFAVORITE", orderFavorite);
+            this.Database.ExecuteSqlCommand(sql, pamId,pamOrder);
         }
         #endregion 
     }

@@ -83,7 +83,7 @@
 
             $("#order").click(function () {
                 var array = new Array();
-                $("input[type=checkbox]").each(function () {
+                $(".img").each(function () {
                     array.push($(this).attr("id"));
                 });
                 console.log(array);
@@ -92,7 +92,7 @@
                 formData.append("idPhotos", array);
                 $.ajax({
                     type: "POST",
-                    url: "/Images/OrderPhotos",
+                    url: "/Images/OrderFavorites",
                     data: formData,
                     contentType: false,
                     processData: false,
@@ -156,22 +156,17 @@
                     var destinoCaja = $(this).attr('id');
 
                     /* Intercambio de imagenes */
-                    var origenImagen = $("#" + origenCaja + ">.card-image>label>img").attr('src');
-                    var destinoImagen = $("#" + destinoCaja + ">.card-image>label>img").attr('src');
+                    var origenImagen = $("#" + origenCaja + ">.card-image>img").attr('src');
+                    var destinoImagen = $("#" + destinoCaja + ">.card-image>img").attr('src');
 
-                    $("#" + destinoCaja + ">.card-image>label>img").attr('src',origenImagen);
-                    $("#" + origenCaja + ">.card-image>label>img").attr('src', destinoImagen);
+                    $("#" + destinoCaja + ">.card-image>img").attr('src',origenImagen);
+                    $("#" + origenCaja + ">.card-image>img").attr('src', destinoImagen);
 
-                    /* Intercambio de ids en checkboxes y referencias de labels */
-                    var origenCheck = $("#" + origenCaja + ">.card-image>input").attr("id");
+                    var origenIdImagen = $("#" + origenCaja + ">.card-image>img").attr('id');
+                    var destinoIdImagen = $("#" + destinoCaja + ">.card-image>img").attr('id');
 
-                    var destinoCheck = $("#" + destinoCaja + ">.card-image>input").attr("id");
-
-                    $("#" + origenCaja + ">.card-image>input").attr("id", destinoCheck);
-                    $("#" + origenCaja + ">.card-image>label").attr('for',destinoCheck);
-                    $("#" + destinoCaja + ">.card-image>input").attr("id", origenCheck);
-                    $("#" + destinoCaja + ">.card-image>label").attr('for', origenCheck);
-
+                    $("#" + destinoCaja + ">.card-image>img").attr('id', origenIdImagen);
+                    $("#" + origenCaja + ">.card-image>img").attr('id', destinoIdImagen);
 
                     /* Intercambio textos */
                     var origenTextoImagen = $("#" + origenCaja + ">.card-content>.card-action>div>span").text();
@@ -180,7 +175,19 @@
                     $("#" + origenCaja + ">.card-content>.card-action>div>span").text(destinoTextoImagen);
                     $("#" + destinoCaja + ">.card-content>.card-action>div>span").text(origenTextoImagen);
 
-                    console.log(origenTextoImagen);
+
+                    /* Intercambio de  iconos e ids booleanos */
+                    var origenBool = $("#" + origenCaja + ">.card-content>.card-action>div>.setFavorite").text();
+                    var destinoBool = $("#" + destinoCaja + ">.card-content>.card-action>div>.setFavorite").text();
+
+                    $("#" + origenCaja + ">.card-content>.card-action>div>.setFavorite").text(destinoBool);
+                    $("#" + destinoCaja + ">.card-content>.card-action>div>.setFavorite").text(origenBool);
+
+                    var origenDataVal = $("#" + origenCaja + ">.card-content>.card-action>div>.setFavorite").data("value");
+                    var destinoDataVal = $("#" + destinoCaja + ">.card-content>.card-action>div>.setFavorite").data("value");
+
+                    $("#" + origenCaja + ">.card-content>.card-action>div>.setFavorite").data("value", destinoDataVal);
+                    $("#" + destinoCaja + ">.card-content>.card-action>div>.setFavorite").data("value", origenDataVal);
 
                     flag = true;
                 });
@@ -200,7 +207,7 @@
                         <div class="card col s12">
                             <div id="div_@p.Id" class="box">
                                 <div class="card-image">
-                                    <input type="checkbox" id="@p.Id" /><label for="@p.Id"><img src="~/images/Session/@p.SessionName/@p.Picture" draggable="true" id="img_@p.Id" class="img" /></label>
+                                    <img src="~/images/Session/@p.SessionName/@p.Picture" draggable="true" id="@p.Id" class="img" />
                                 </div>
                                 <div class="card-content">
                                     <div class="card-action">
@@ -214,7 +221,6 @@
                                             {
                                                 <i class="material-icons setFavorite" style="color:red; float: right" data-value="@p.Id">favorite_border</i>
                                             }
-
                                         </div>
                                     </div>
                                 </div>
