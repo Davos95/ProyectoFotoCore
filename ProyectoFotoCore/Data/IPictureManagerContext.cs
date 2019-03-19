@@ -18,6 +18,8 @@ namespace ProyectoFotoCore.Data
         DbSet<WORK> Works { get; set; }
         DbSet<WORKER> Workers { get; set; }
         DbSet<Worker_Session_Complex> ComplexWorkers { get; set; }
+        DbSet<SESSION_COMPLEX> SessionComplex { get; set; }
+
 
         #region Comisions
 
@@ -60,6 +62,11 @@ namespace ProyectoFotoCore.Data
         List<Worker_Session_Complex> GetPartnerWorkBySesion(int idSesion);
         void DeletePartnerWorkFromSesion(int idSesion, int idPartner, int idWork);
         void ModifySesion(int idSesion, String name, String desciption, DateTime date, int idComision);
+
+        void SetImageSession(int idSesion, int idImage);
+
+        List<SESSION_COMPLEX> GetSessionsComplex();
+        SESSION_COMPLEX GetSessionComplexById(int idSession);
         #endregion
 
         #region Work

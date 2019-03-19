@@ -10,6 +10,9 @@ using ProyectoFotoCore.Provider;
 using ProyectoFotoCore.Repositories;
 using ProyectoFotoCore.Tools;
 
+//GETCOMPLEXSESIONBYID
+
+
 namespace ProyectoFotoCore.Controllers
 {
 
@@ -68,18 +71,19 @@ namespace ProyectoFotoCore.Controllers
         #region Edit Sesion
         public IActionResult EditSesion(int id)
         {
-            SESSION sesion = this.repoSesion.GetSESIONID(id);
+            SESSION_COMPLEX sesion = this.repoSesion.GetSessionComplexById(id);
 
             ViewBag.Date = sesion.DateSesion.ToString("yyyy-MM-dd");
             ViewBag.Comision = this.repoComision.GetCOMISIONS().ToList();
             ViewBag.Partner = this.repoPartner.GetPartners().ToList();
             ViewBag.Work = this.repoWork.GetWORKs().ToList();
             ViewBag.Workers = this.repoSesion.GetPartnerWorkBySesion(id);
+            ViewBag.Photos = this.repoPhoto.GetPhotos(id).ToList();
             return View(sesion);
         }
 
         [HttpPost]
-        public IActionResult EditSesion(String option, int idSesion, int? idPartner, int? idWork, String name, String description, DateTime? date, int? comision)
+        public IActionResult EditSesion(String option, int idSesion, int? idPartner, int? idWork, String name, String description, DateTime? date, int? comision, int? idImage)
         {
             if (option == "ADD")
             {
@@ -93,15 +97,19 @@ namespace ProyectoFotoCore.Controllers
                 ToolImage.RenameFolder(path, sessionName, name);
                 this.repoSesion.ModifySesion(idSesion, name, description, date.Value, comision.Value);
             }
+            else if (option == "SETIMAGE") {
+                this.repoSesion.SetImageSession(idSesion, idImage.Value);
+            }
 
 
-            SESSION sesion = this.repoSesion.GetSESIONID(idSesion);
+            SESSION_COMPLEX sesion = this.repoSesion.GetSessionComplexById(idSesion);
             ViewBag.Date = sesion.DateSesion.ToString("yyyy-MM-dd");
             ViewBag.Comision = this.repoComision.GetCOMISIONS().ToList();
 
             ViewBag.Partner = this.repoPartner.GetPartners().ToList();
             ViewBag.Work = this.repoWork.GetWORKs().ToList();
             ViewBag.Workers = this.repoSesion.GetPartnerWorkBySesion(idSesion);
+            ViewBag.Photos = this.repoPhoto.GetPhotos(idSesion).ToList();
             return View(sesion);
         }
 

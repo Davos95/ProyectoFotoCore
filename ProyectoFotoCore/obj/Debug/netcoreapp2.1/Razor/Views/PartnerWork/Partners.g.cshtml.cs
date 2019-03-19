@@ -75,7 +75,7 @@ using ProyectoFotoCore.Models;
                 WriteLiteral("\r\n");
                 EndContext();
                 BeginContext(165, 56, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "50c4932f5f654ae28de8751a72181d22", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1f05a7eae94c417081bec604339683cf", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -130,7 +130,7 @@ using ProyectoFotoCore.Models;
             WriteLiteral("\r\n<div class=\"row\" style=\"padding: 1rem 1.2rem;\">\r\n    <div class=\"col s12 m4 l4 xl3\">\r\n        <div class=\"card\">\r\n            <div class=\"card-title center-align title\"><i class=\"material-icons iconTitle\">person_add</i>Participante</div>\r\n            ");
             EndContext();
             BeginContext(1752, 1296, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c5ffebb2850342028af03ea931435958", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70fcc7f5c630464ca3f3e87a486e82a9", async() => {
                 BeginContext(1772, 1269, true);
                 WriteLiteral(@"
                 <div class=""card-content card-content-padding"">

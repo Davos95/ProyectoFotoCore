@@ -23,6 +23,8 @@ namespace ProyectoFotoCore.Data
         public DbSet<WORKER> Workers { get; set; }
         public DbSet<Worker_Session_Complex> ComplexWorkers { get; set; }
         public DbSet<PHOTO_COMPLEX> ComplexPhoto { get; set; }
+        public DbSet<SESSION_COMPLEX> SessionComplex { get; set; }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -263,6 +265,25 @@ namespace ProyectoFotoCore.Data
             this.Database.ExecuteSqlCommand(sql, pamIdSesion, pamName, pamDescription, pamDate, pamComision);
         }
 
+        public void SetImageSession(int idSession, int idImage)
+        {
+            String sql = "SETIMAGESESSION @IDSESSION,@IDPHOTO";
+            SqlParameter pamIdSession = new SqlParameter("@IDSESSION", idSession);
+            SqlParameter pamIdImage = new SqlParameter("@IDPHOTO", idImage);
+            this.Database.ExecuteSqlCommand(sql, pamIdSession, pamIdImage);
+        }
+
+        public List<SESSION_COMPLEX> GetSessionsComplex() {
+            String sql = "GETCOMPLEXSESION";
+            return this.SessionComplex.FromSql(sql).ToList();
+        }
+
+        public SESSION_COMPLEX GetSessionComplexById(int idSession)
+        {
+            String sql = "GETCOMPLEXSESIONBYID @ID";
+            SqlParameter pamIdSession = new SqlParameter("@ID", idSession);
+            return this.SessionComplex.FromSql(sql, pamIdSession).SingleOrDefault();
+        }
 
         #endregion
 
@@ -322,6 +343,10 @@ namespace ProyectoFotoCore.Data
             SqlParameter pamOrder = new SqlParameter("@ORDERFAVORITE", orderFavorite);
             this.Database.ExecuteSqlCommand(sql, pamId,pamOrder);
         }
-        #endregion 
+
+       
+
+
+        #endregion
     }
 }

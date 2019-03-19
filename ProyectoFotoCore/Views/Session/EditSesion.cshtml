@@ -1,10 +1,15 @@
 ﻿@using ProyectoFotoCore.Models
-@model SESSION
+@model SESSION_COMPLEX
 
 @{
     ViewBag.Title = "Editar Sesion";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@{
+    List<PHOTO> photos = ViewBag.Photos;
+}
+
 @section styles {
     
 <link href="~/css/styleEditSession.css" rel="stylesheet" />
@@ -35,6 +40,21 @@
 
                     $("#idWork").val($(this).data("work"));
                 }
+            });
+
+            $("#cardImage").click(function () {
+                $("#modalImages").modal('open');
+            });
+
+            $(".img").click(function () {
+                $("#modalImages").modal('close');
+
+                var id = $(this).attr('id');
+                var src = $(this).attr("src");
+
+                $("#idImageSession").val(id);
+                $("#imgPreview").attr("src",src);
+
             });
         });
     </script>
@@ -143,6 +163,75 @@
             </div>
         </div>
     </div>
+</div>
 
+<div class="row">
+    <div class="col s12 m7 l6 xl5 offset-m5 offset-l6 offset-xl7">
+        <div class="card" >
+            <div class="card-content" >
+                <div class="row">
+                    <div class="col s6">
+                        <form method="post">
+                            <input type="hidden" id="idImageSession" name="idImage" />
+                            <input type="hidden" value="@Model.Id" name="idSesion" />
+                            <button id="setImage" class="btn waves-effect waves-darken green" name="option" value="SETIMAGE">Establecer imagen</button>
+                        </form>
+                    </div>
+                    <div class="col s6">
+                        <div style="border: 1px solid;" id="cardImage">
+                            @if (Model.IdPhoto != null)
+                            {
+                                <img id="imgPreview" src="~/images/session/@Model.Name/@Model.Picture" style="object-fit:contain; width:100%;" />
+                            }
+                            else
+                            {
+                                <img id="imgPreview" style="object-fit:contain; width:100%;" />
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalImages" class="modal">
+    <div class="modal-content">
+        <div class="col s12 m7 l8 xl9">
+            <div class="row gallery">
+                @if (photos.Count() > 0)
+                {
+                    foreach (PHOTO p in ViewBag.Photos)
+                    {
+                        <div class="col s12 m3">
+                            <div class="card col s12">
+                                <div id="div_@p.Id" class="box">
+                                    <div class="card-image">
+                                        <img src="~/images/Session/@Model.Name/@p.Picture" id="@p.Id" class="img" />
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-action">
+                                            <div class="textPhoto">
+                                                <span class="triggerImage">@p.Picture</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+
+                }
+                else
+                {
+                    <h1>¡No hay fotos actualmente!</h1>
+                    <h1>¡Intenta subir unas cuantas!</h1>
+                }
+
+            </div>
+        </div>
+    </div>
 </div>
 

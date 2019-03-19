@@ -126,6 +126,21 @@ namespace ProyectoFotoCore.Repositories
             this.context.ModifySesion(idSesion, name, desciption, date, idComision);
         }
 
+        public void SetImageSession(int idSession, int idImage)
+        {
+            this.context.SetImageSession(idSession, idImage);
+        }
+
+        public List<SESSION_COMPLEX> GetSessionsComplex()
+        {
+            return this.context.GetSessionsComplex();
+        }
+
+        public SESSION_COMPLEX GetSessionComplexById(int idSession)
+        {
+            return this.context.GetSessionComplexById(idSession);
+        }
+
         #endregion
     }
 }

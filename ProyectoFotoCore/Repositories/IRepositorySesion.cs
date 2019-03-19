@@ -19,5 +19,10 @@ namespace ProyectoFotoCore.Repositories
         void DeletePartnerWorkFromSesion(int idSesion, int idPartner, int idWork);
 
         void ModifySesion(int idSesion, String name, String desciption, DateTime date, int idComision);
+
+        void SetImageSession(int idSession, int idImage);
+
+        List<SESSION_COMPLEX> GetSessionsComplex();
+        SESSION_COMPLEX GetSessionComplexById(int idSession);
     }
 }

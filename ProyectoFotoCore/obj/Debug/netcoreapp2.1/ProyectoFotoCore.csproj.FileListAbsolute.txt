@@ -30,7 +30,6 @@ C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\bin\Debug\ne
 C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\bin\Debug\netcoreapp2.1\ProyectoFotoCore.Views.pdb
 C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.Views.pdb
 C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.csproj.CopyComplete
-C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.csprojAssemblyReference.cache
 G:\Proyectos\ProyectoFotoCore\ProyectoFotoCore\bin\Debug\netcoreapp2.1\ProyectoFotoCore.deps.json
 G:\Proyectos\ProyectoFotoCore\ProyectoFotoCore\bin\Debug\netcoreapp2.1\ProyectoFotoCore.runtimeconfig.json
 G:\Proyectos\ProyectoFotoCore\ProyectoFotoCore\bin\Debug\netcoreapp2.1\ProyectoFotoCore.runtimeconfig.dev.json
