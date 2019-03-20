@@ -76,3 +76,5 @@ C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\ne
 C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\ProyectoFotoCore.csprojAssemblyReference.cache
 C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\Razor\Views\Front\Index.g.cshtml.cs
 C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutFront.g.cshtml.cs
+G:\Proyectos\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\Razor\Views\Front\Index.g.cshtml.cs
+G:\Proyectos\ProyectoFotoCore\ProyectoFotoCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutFront.g.cshtml.cs

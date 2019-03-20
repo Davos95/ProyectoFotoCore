@@ -22,8 +22,8 @@
             <div class="nav-wrapper">
                 @Html.ActionLink("Proyecto Foto", "menu", "admin", new { }, new { @class = "brand-logo", @style = "color:black" })
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a a class="dropdown-trigger" href="#!" data-target="dropdownSesion" style="color: black">Sesiones</a></li>
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdownComision" style="color: black">Comisiones</a></li>
+                    <li><a a class="dropdown-trigger" href="#!"  style="color: black">Sesiones</a></li>
+                    <li><a class="dropdown-trigger" href="#!" style="color: black">Comisiones</a></li>
                 </ul>
             </div>
         </nav>
@@ -45,7 +45,6 @@
     <environment include="Development">
         <script src="~/js/jquery-3.3.1.min.js"></script>
         <script src="~/js/materialize.min.js"></script>
-        <script src="~/js/menuDropdown.js"></script>
     </environment>
 
     @if (IsSectionDefined("events"))

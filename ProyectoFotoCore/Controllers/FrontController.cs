@@ -27,6 +27,7 @@ namespace ProyectoFotoCore.Controllers
         public IActionResult Index()
         {
             List<PHOTO_COMPLEX> favoritePhotos = this.repoPhoto.GetFavorites();
+
             return View(favoritePhotos);
         }
         public IActionResult Admin()
