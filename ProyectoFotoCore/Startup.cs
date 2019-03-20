@@ -77,8 +77,15 @@ namespace ProyectoFotoCore
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                   name: "admin",
+                   template: "Admin",
+                   defaults: new { controller = "Front", action = "Admin" });
+
+                routes.MapRoute(
                     name: "default",
-                    template: "{controller=Login}/{action=Login}/{id?}");
+                    template: "{controller=Front}/{action=Index}/{id?}");
+
+               
             });
         }
     }

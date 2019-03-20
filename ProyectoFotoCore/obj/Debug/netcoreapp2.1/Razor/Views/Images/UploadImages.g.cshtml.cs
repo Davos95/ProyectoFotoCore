@@ -72,7 +72,7 @@ using ProyectoFotoCore.Models;
                 WriteLiteral("\r\n    \r\n    ");
                 EndContext();
                 BeginContext(174, 60, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "44b068c71eb349d28eab9b79e86c270c", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1263bce2937141269147841876857d81", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -91,7 +91,7 @@ using ProyectoFotoCore.Models;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(240, 54, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6a41b3a2f0c24a5593acabab6c085500", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "83ddbb0d6b0c40c18813151f2b063587", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -116,7 +116,7 @@ using ProyectoFotoCore.Models;
                 WriteLiteral("\r\n    <script>\r\n        $(document).ready(function () {\r\n            M.AutoInit();\r\n        });\r\n    </script>\r\n    ");
                 EndContext();
                 BeginContext(432, 50, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "35a784fd42f04a158dff464c26f92c31", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "80f6687ab27942a18e604ccbd6c59a8b", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -134,7 +134,7 @@ using ProyectoFotoCore.Models;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(488, 43, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad4b604fbc084fb89ee4940f66ff2902", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9dbe6e0104f9437a9e0ce8c7c12dfd68", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -157,7 +157,7 @@ using ProyectoFotoCore.Models;
             WriteLiteral("<div class=\"row\">\r\n    <div class=\"col s12 m10 l8 xl6 offset-m1 offset-l2 offset-xl3 \">\r\n        ");
             EndContext();
             BeginContext(633, 1712, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f3908935f3db475f87b73f2c71b9bb2e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3e7111fe70284bdab6c1b2102ce56ecc", async() => {
                 BeginContext(683, 915, true);
                 WriteLiteral(@"
             <div class=""card"">
@@ -180,7 +180,7 @@ using ProyectoFotoCore.Models;
                             ");
                 EndContext();
                 BeginContext(1598, 69, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2934782c39b34e37afa4fabbe91a5412", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "baef92c71c894c6bbf77ab5ef26597d1", async() => {
                     BeginContext(1637, 21, true);
                     WriteLiteral("Selecciona una opción");
                     EndContext();
@@ -219,7 +219,7 @@ using ProyectoFotoCore.Models;
                 WriteLiteral("                                    ");
                 EndContext();
                 BeginContext(1882, 38, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "74a199734786439c912f7b1b2a68d986", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1667d14656a47629f759cead8b11667", async() => {
                     BeginContext(1905, 6, false);
 #line 46 "C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\Views\Images\UploadImages.cshtml"
                                                      Write(s.Name);

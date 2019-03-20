@@ -68,7 +68,7 @@ using ProyectoFotoCore.Models;
                 WriteLiteral("\r\n    \r\n    ");
                 EndContext();
                 BeginContext(170, 56, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "808ecf5251054164957085df7aba5e22", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "999ed62e5fa2412c997d82b9e1037f6f", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -224,7 +224,7 @@ using ProyectoFotoCore.Models;
                 ");
             EndContext();
             BeginContext(5938, 2131, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad6b4de44e5b4143a6ca7e2b7bc8d38d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9301385d7136406f94b6eff97209a9b4", async() => {
                 BeginContext(6006, 2056, true);
                 WriteLiteral(@"
                     <div class=""input-field"">

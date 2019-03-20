@@ -37,7 +37,7 @@ namespace ProyectoFotoCore.Controllers
 
         public IActionResult Sesion()
         {
-            List<SESSION> sesions = this.repoSesion.GetSesions().ToList();
+            List<SESSION_COMPLEX> sesions = this.repoSesion.GetSessionsComplex().ToList();
             return View(sesions);
         }
 

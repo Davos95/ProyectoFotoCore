@@ -1,0 +1,15 @@
+﻿@using ProyectoFotoCore.Models
+@model List<PHOTO_COMPLEX>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutFront.cshtml";
+}
+
+<div class="row">
+    <div class="col s12">
+        @foreach (PHOTO_COMPLEX p in Model)
+        {
+            <img src="~/images/session/@p.SessionName/@p.Picture" style="width: 30%; object-fit:contain" />
+        }
+    </div>
+</div>

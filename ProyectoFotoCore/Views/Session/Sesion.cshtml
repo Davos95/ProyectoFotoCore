@@ -1,5 +1,5 @@
 ﻿@using ProyectoFotoCore.Models
-@model List<SESSION>
+@model List<SESSION_COMPLEX>
 
 @{
     ViewBag.Title = "Sesion";
@@ -10,7 +10,10 @@
         .noPadding {
             padding: 0px !important;
         }
-        
+        .img {
+            width: 240px;
+            height: 240px;
+        }
     </style>
 }
 @section events{
@@ -29,19 +32,25 @@
                 @if (Model != null)
                 {
                     <div class="row">
-                        @foreach (SESSION s in Model)
+                        @foreach (SESSION_COMPLEX s in Model)
                         {
                             <div class="col s12 m8 l6 xl4">
                                 <div class="card">
                                     <div class="card-image activator">
-                                        @if (s.IdPhoto != null)
+                                        @if (s.IdPhoto == 0)
                                         {
-                                            <img class="activator" src="images/office.jpg">
+                                            <img class="activator img" src="~/images/default/default.jpg">
+                                            <div class="card-title activator" style="color:black">@s.Name</div>
+                                        }
+                                        else
+                                        {
+                                            <img class="activator img" src="~/images/session/@s.Name/@s.Picture" style="object-fit:cover;">
+                                            <div class="card-title activator" >@s.Name</div>
                                         }
 
                                     </div>
                                     <div class="card-content">
-                                        <div class="card-title activator" style="color:black">@s.Name</div>
+                                        
                                         <div class="card-action">
                                             <a href="@Url.Action("DeleteSesion","Session",new { id = s.Id, name = s.Name  })" style="float: right"><i class="material-icons" style="color:red">delete</i></a>
                                             <a href="@Url.Action("EditSesion","Session",new { id = s.Id })" style="float: right"><i class="material-icons" style="color: black;">edit</i></a>

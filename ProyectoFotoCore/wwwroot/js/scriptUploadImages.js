@@ -35,7 +35,6 @@ $(document).ready(function () {
     });
 
      $("#files").change(function(e) {
-         console.log("cerrado"); 
          arrayImages = e.target.files;
     });
 

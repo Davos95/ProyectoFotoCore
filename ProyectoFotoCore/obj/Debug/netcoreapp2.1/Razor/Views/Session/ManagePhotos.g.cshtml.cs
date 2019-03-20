@@ -107,7 +107,7 @@ using ProyectoFotoCore.Models;
     ");
                 EndContext();
                 BeginContext(890, 55, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "162bbd7eaa804042b1a9048d6300f249", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "403cd8d4b81149f5ac072de6124e82c0", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -418,7 +418,7 @@ WriteAttributeValue("", 10459, p.Id, 10459, 5, false);
             WriteLiteral(">");
             EndContext();
             BeginContext(10466, 106, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b38f9b36abd04de3933bf1233381f44c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "4827a1cc2fc94a3690bc055f3f486828", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -555,7 +555,7 @@ AddHtmlAttributeValue("", 10551, p.Id, 10551, 5, false);
                         ");
             EndContext();
             BeginContext(12550, 70, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c1a021178e0c4773b9eefdbe4079da93", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df7c1930e84c4acf8141d5e7731bcef8", async() => {
                 BeginContext(12589, 22, true);
                 WriteLiteral("Selecciona una sessión");
                 EndContext();
@@ -592,7 +592,7 @@ AddHtmlAttributeValue("", 10551, p.Id, 10551, 5, false);
             WriteLiteral("                            ");
             EndContext();
             BeginContext(12743, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6a7518a76db42f5a74addda05ad6468", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc66d5c2942748999158144a40335f5d", async() => {
                 BeginContext(12766, 6, false);
 #line 317 "C:\Users\AlumnoMCSD\source\Github\ProyectoFotoCore\ProyectoFotoCore\Views\Session\ManagePhotos.cshtml"
                                              Write(s.Name);
