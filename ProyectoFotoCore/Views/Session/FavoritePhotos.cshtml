@@ -15,78 +15,67 @@
             height: 3rem;
         }
 
-        .img {
+        /*.img {
             width: 240px;
             height: 240px;
             object-fit: contain;
-        }
+        }*/
 
-        .gallery .card .card-content {
+        /*.gallery .card .card-content {
             padding: 1px;
-        }
+        }*/
 
-        .check {
-            visibility: hidden;
-            padding: 0 0 0 0.5rem;
-        }
 
-        .card-image {
+        /*.card-image {
             margin: 1rem;
-        }
+        }*/
 
-        .textPhoto {
+        /*.textPhoto {
             text-align: center;
         }
 
-        .setFavorite {
-            cursor: pointer;
-        }
+       
 
         .triggerImage {
             margin-left: 3.5em;
             cursor: pointer;
+        }*/
+        .setFavorite {
+            cursor: pointer;
+        }
+        .card-title {
+            display: flex;
+            align-items: center;
+            width: 100%;
         }
     </style>
     <link href="~/css/PreviewImage.css" rel="stylesheet" />
+    <link href="~/css/styleGridImagesFront.css" rel="stylesheet" />
+
 }
 
 
 @section events{
-        <script>
+    <script>
         $(document).ready(function () {
             M.AutoInit();
 
-            var flag = true;
-
             $(".triggerImage").click(function () {
                 $("#modalPreview").css("display", "block");
-                console.log($(this).parents(".box"));
-                $("#imagePreview").attr("src", $(this).parents(".box").children(".card-image").children("label").children("img").attr("src"));
+                console.log($(this).parents(".card-image"));
+                $("#imagePreview").attr("src", $(this).parents(".card-image").children("img").attr("src"));
 
             });
 
             $("#modalPreview").click(function () {
                 $(this).css("display", "none");
             });
-
-            $(".img").click(function () {
-
-                if (!$(this).parents(".box").children(".card-image").children("input").prop("checked")) {
-                    $(this).parents(".box").children(".card-content").children(".card-action").children("div").children(".check").css("visibility", "visible");
-                }
-                else {
-                    $(this).parents(".box").children(".card-content").children(".card-action").children("div").children(".check").css("visibility", "hidden");
-                }
-
-            });
-
-
+            
             $("#order").click(function () {
                 var array = new Array();
                 $(".img").each(function () {
                     array.push($(this).attr("id"));
                 });
-                console.log(array);
 
                 var formData = new FormData();
                 formData.append("idPhotos", array);
@@ -105,7 +94,7 @@
             });
 
             $(".setFavorite").click(function () {
-
+                console.log("entra");
                 var id = $(this).data("value");
                 var formData = new FormData();
                 var objet = $(this);
@@ -138,104 +127,94 @@
 
             });
 
-            var origenCaja = "";
+            var origen;
+            var flagImg = true;
+            $(".card-image").on("dragover", function (e) {
+                e.preventDefault();
+                //Recogemos el id del origen
+                if (flagImg) {
+                    origen = $(this).attr('id');
+                    flagImg = false;
+                }
+            }).on("drop", function (e) {
+                e.preventDefault();
+                var destino = $(this).attr('id');
 
-            $(".box")
-                .on("dragover", function (e) {
-                    //RECOGEMOS INFORMACION DE LA IMAGEN ORIGEN
-                    e.preventDefault();
-                    if (flag) {
-                        origenCaja = $(this).attr("id");
-                        //origenCaja = origenCaja.split('_')[1];
-                        console.log(origenCaja);
-                        flag = false;
-                    }
-                }).on("drop", function (e) {
-                    //INTERCAMBIAMOS INFORMACION ENTRE LA IMAGEN ORIGEN Y LA DE DESTINO
-                    e.preventDefault();
-                    var destinoCaja = $(this).attr('id');
+                /*Intercambio de imagenes*/
+                var origenImg = $("#" + origen + ">img").attr('src');
+                var destinoImg = $("#" + destino + ">img").attr('src');
 
-                    /* Intercambio de imagenes */
-                    var origenImagen = $("#" + origenCaja + ">.card-image>img").attr('src');
-                    var destinoImagen = $("#" + destinoCaja + ">.card-image>img").attr('src');
+                $("#" + origen + ">img").attr('src', destinoImg);
+                $("#" + destino + ">img").attr('src', origenImg);
 
-                    $("#" + destinoCaja + ">.card-image>img").attr('src',origenImagen);
-                    $("#" + origenCaja + ">.card-image>img").attr('src', destinoImagen);
+                var origenIdImg = $("#" + origen + ">img").attr('id');
+                var destinoIdImg = $("#" + destino + ">img").attr('id');
+                $("#" + origen + ">img").attr('id', destinoIdImg);
+                $("#" + destino + ">img").attr('id', origenIdImg);
 
-                    var origenIdImagen = $("#" + origenCaja + ">.card-image>img").attr('id');
-                    var destinoIdImagen = $("#" + destinoCaja + ">.card-image>img").attr('id');
+                /* Intercambio de textos */
 
-                    $("#" + destinoCaja + ">.card-image>img").attr('id', origenIdImagen);
-                    $("#" + origenCaja + ">.card-image>img").attr('id', destinoIdImagen);
+                var origenTextoImagen = $("#" + origen + ">.card-title>span").text();
+                var destinoTextoImagen = $("#" + destino + ">.card-title>span").text();
 
-                    /* Intercambio textos */
-                    var origenTextoImagen = $("#" + origenCaja + ">.card-content>.card-action>div>span").text();
-                    var destinoTextoImagen = $("#" + destinoCaja + ">.card-content>.card-action>div>span").text();
+                $("#" + origen + ">.card-title>span").text(destinoTextoImagen);
+                $("#" + destino + ">.card-title>span").text(origenTextoImagen);
 
-                    $("#" + origenCaja + ">.card-content>.card-action>div>span").text(destinoTextoImagen);
-                    $("#" + destinoCaja + ">.card-content>.card-action>div>span").text(origenTextoImagen);
+                /* Intercambio de  iconos e ids booleanos */
 
+                var origenBool = $("#" + origen + ">.card-title>i").text();
+                var destinoBool = $("#" + destino + ">.card-title>i").text();
 
-                    /* Intercambio de  iconos e ids booleanos */
-                    var origenBool = $("#" + origenCaja + ">.card-content>.card-action>div>.setFavorite").text();
-                    var destinoBool = $("#" + destinoCaja + ">.card-content>.card-action>div>.setFavorite").text();
+                $("#" + origen + ">.card-title>i").text(destinoBool);
+                $("#" + destino + ">.card-title>i").text(origenBool);
 
-                    $("#" + origenCaja + ">.card-content>.card-action>div>.setFavorite").text(destinoBool);
-                    $("#" + destinoCaja + ">.card-content>.card-action>div>.setFavorite").text(origenBool);
+                var origenDataVal = $("#" + origen + ">.card-title>i").data("value");
+                var destinoDataVal = $("#" + destino + ">.card-title>i").data("value");
 
-                    var origenDataVal = $("#" + origenCaja + ">.card-content>.card-action>div>.setFavorite").data("value");
-                    var destinoDataVal = $("#" + destinoCaja + ">.card-content>.card-action>div>.setFavorite").data("value");
+                $("#" + origen + ">.card-title>i").data("value", destinoDataVal);
+                $("#" + destino + ">.card-title>i").data("value", origenDataVal);
 
-                    $("#" + origenCaja + ">.card-content>.card-action>div>.setFavorite").data("value", destinoDataVal);
-                    $("#" + destinoCaja + ">.card-content>.card-action>div>.setFavorite").data("value", origenDataVal);
+                flagImg = true;
+            });
 
-                    flag = true;
-                });
 
         });
-        </script>
+    </script>
 }
 
 <div class="row" style="padding: 1rem 1.2rem;">
     <div class="col s12 m7 l8 xl9">
         <div class="row gallery">
-            @if (Model.Count() > 0)
-            {
-                foreach (PHOTO_COMPLEX p in Model)
+            <div id="photos">
+                @if (Model.Count() > 0)
                 {
-                    <div class="col s12 m3">
-                        <div class="card col s12">
-                            <div id="div_@p.Id" class="box">
-                                <div class="card-image">
-                                    <img src="~/images/Session/@p.SessionName/@p.Picture" draggable="true" id="@p.Id" class="img" />
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-action">
-                                        <div class="textPhoto">
-                                            <span class="triggerImage">@p.Picture</span>
-                                            @if (p.Favorite)
-                                            {
-                                                <i class="material-icons setFavorite" style="color:red; float: right" data-value="@p.Id">favorite</i>
-                                            }
-                                            else
-                                            {
-                                                <i class="material-icons setFavorite" style="color:red; float: right" data-value="@p.Id">favorite_border</i>
-                                            }
-                                        </div>
-                                    </div>
-                                </div>
+                    foreach (PHOTO_COMPLEX p in Model)
+                    {
+                        <div class="card">
+                            <div class="card-image" id="div_@p.Id">
+                                <img src="~/images/Session/@p.SessionName/@p.Picture" draggable="true" id="@p.Id" class="img" />
+                                <span class="card-title" style="width: 100%">
+                                    @if (p.Favorite)
+                                    {
+                                        <i class="material-icons setFavorite" style="color:red; float: left" data-value="@p.Id">favorite</i>
+                                    }
+                                    else
+                                    {
+                                        <i class="material-icons setFavorite" style="color:red; float: left" data-value="@p.Id">favorite_border</i>
+                                    }
+                                    <span class="triggerImage" style="margin: 0 7em">@p.Picture</span>
+                                </span>
+
                             </div>
                         </div>
-                    </div>
-
+                    }
                 }
-
-            }
-            else
-            {
-                <h1>¡No hay fotos actualmente!</h1>
-                <h1>¡Intenta subir unas cuantas!</h1>
-            }
+                else
+                {
+                    <h1>¡No hay fotos actualmente!</h1>
+                    <h1>¡Intenta subir unas cuantas!</h1>
+                }
+            </div>
         </div>
     </div>
     <div class="col s12 m5 l4 xl3">
