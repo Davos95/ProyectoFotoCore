@@ -221,16 +221,16 @@
                 var destino = $(this).attr('id');
 
                 /*Intercambio de imagenes*/
-                var origenImg = $("#" + origen + ">label>img").attr('src');
-                var destinoImg = $("#" + destino + ">label>img").attr('src');
+                var origenImg = $("#" + origen + ">img").attr('src');
+                var destinoImg = $("#" + destino + ">img").attr('src');
 
-                $("#" + origen + ">label>img").attr('src', destinoImg);
-                $("#" + destino + ">label>img").attr('src', origenImg);
+                $("#" + origen + ">img").attr('src', destinoImg);
+                $("#" + destino + ">img").attr('src', origenImg);
 
-                var origenIdImg = $("#" + origen + ">label>img").attr('id');
-                var destinoIdImg = $("#" + destino + ">label>img").attr('id');
-                $("#" + origen + ">label>img").attr('id', destinoIdImg);
-                $("#" + destino + ">label>img").attr('id', origenIdImg);
+                var origenIdImg = $("#" + origen + ">img").attr('id');
+                var destinoIdImg = $("#" + destino + ">img").attr('id');
+                $("#" + origen + ">img").attr('id', destinoIdImg);
+                $("#" + destino + ">img").attr('id', origenIdImg);
 
                 /* Intercambio de textos */
 
@@ -341,8 +341,8 @@
                             <div class="card">
                                 <div class="card-image" id="div_@p.Id">
                                     
-                                    <input type="checkbox" id="@p.Id" />
-                                    <label for="@p.Id"><img src="~/images/Session/@ViewBag.SessionName/@p.Picture" draggable="true" id="@p.Id" class="img" /></label>
+                                    
+                                    <img src="~/images/Session/@ViewBag.SessionName/@p.Picture" draggable="true" id="@p.Id" class="img triggerImage" />
                                     <span class="card-title" style="width: 100%">
                                         @if (p.Favorite)
                                         {
@@ -352,7 +352,8 @@
                                         {
                                             <i class="material-icons setFavorite" style="color:red; float: left" data-value="@p.Id">favorite_border</i>
                                         }
-                                        <span class="triggerImage" style="margin: 0 7em">@p.Picture</span>
+                                        <input type="checkbox" id="@p.Id" />
+                                        <label for="@p.Id"><span style="margin: 0 7em">@p.Picture</span></label>
                                     </span>
 
                                 </div>
