@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using ProyectoFotoCore.Filters;
 using ProyectoFotoCore.Models;
 using ProyectoFotoCore.Repositories;
 
@@ -18,6 +19,8 @@ namespace ProyectoFotoCore.Controllers
         {
             this.repo = repo;
         }
+
+
         public IActionResult login()
         {
             return View();
@@ -44,7 +47,7 @@ namespace ProyectoFotoCore.Controllers
         public async Task<IActionResult> CerrarSesion()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("login", "Login");
         }
 
     }
