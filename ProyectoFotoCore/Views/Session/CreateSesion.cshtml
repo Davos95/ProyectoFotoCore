@@ -23,18 +23,18 @@
             <div class="card-content">
                 <form method="post">
                     <div class="input-field">
-                        <input type="text" name="name" id="name" />
+                        <input type="text" name="name" id="name" required/>
                         <label for="name"><i class="material-icons iconInput">label</i>Nombre de la sesión</label>
                     </div>
                     <div class="input-field">
-                        <textarea name="description" id="description" placeholder="Descripcion" style="resize:none; height:70px;"></textarea>
+                        <textarea name="description" id="description" placeholder="Descripcion" style="resize:none; height:70px;" required></textarea>
                     </div>
                     <div class="input-field">
-                        <input type="date" id="date" name="date" class="" />
+                        <input type="date" id="date" name="date" class="" required />
                         <label for="date"><i class="material-icons iconInput">date_range</i>Fecha de la sesión</label>
                     </div>
                     <div class="input-field">
-                        <select name="comision" id="comision">
+                        <select name="comision" id="comision" required>
                             <option disabled selected>Selecciona una opción</option>
                             @if (Model != null)
                             {

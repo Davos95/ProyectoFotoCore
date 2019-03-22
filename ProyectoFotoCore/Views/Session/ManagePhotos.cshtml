@@ -45,12 +45,28 @@
             display: flex;
             align-items: center;
             width: 100%;
+            
+            
+        }
+        .card-title-foto {
+            background-color: rgba(0,0,0,0.3);
+            padding: 4px !important;
+        }
+        label {
+            font-size: inherit !important;
+            color: white !important;
+        }
+        .toCheck {
+            position: relative;
+            left: 6em;
+            cursor: pointer;
+        }
+        [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+            position: absolute;
+            opacity: 0;
+            pointer-events: visible;
         }
 
-        /*.triggerImage {
-            margin-left: 3.5em;
-            cursor: pointer;
-        }*/
     </style>
 
     <link href="~/css/PreviewImage.css" rel="stylesheet" />
@@ -61,8 +77,6 @@
     <script>
         $(document).ready(function () {
             M.AutoInit();
-
-            var flag = true;
 
             $(".triggerImage").click(function () {
                 $("#modalPreview").css("display", "block");
@@ -75,13 +89,17 @@
                 $(this).css("display", "none");
             });
 
-            $(".img").click(function () {
-
-                if (!$(this).parents(".box").children(".card-image").children("input").prop("checked")) {
-                    $(this).parents(".box").children(".card-content").children(".card-action").children("div").children(".check").css("visibility", "visible");
+            $(".toCheck").click(function () {
+                
+                if (!$(this).parents(".card-title").children("input").prop("checked")) {
+                    console.log("visible");
+                    $(this).parents(".card-title").children("input").prop("checked", true);
+                    $(this).parents(".card-title").children(".check").css("visibility", "visible");
                 }
                 else {
-                    $(this).parents(".box").children(".card-content").children(".card-action").children("div").children(".check").css("visibility", "hidden");
+                    console.log("invisible");
+                    $(this).parents(".card-title").children("input").prop("checked", false);
+                    $(this).parents(".card-title").children(".check").css("visibility", "hidden");
                 }
 
             });
@@ -205,8 +223,6 @@
 
             });
 
-            var origenCaja = "";
-
             var origen;
             var flagImg = true;
             $(".card-image").on("dragover", function (e) {
@@ -220,6 +236,9 @@
                 e.preventDefault();
                 var destino = $(this).attr('id');
 
+                console.log(origen);
+                console.log(destino);
+                
                 /*Intercambio de imagenes*/
                 var origenImg = $("#" + origen + ">img").attr('src');
                 var destinoImg = $("#" + destino + ">img").attr('src');
@@ -229,40 +248,43 @@
 
                 var origenIdImg = $("#" + origen + ">img").attr('id');
                 var destinoIdImg = $("#" + destino + ">img").attr('id');
+
                 $("#" + origen + ">img").attr('id', destinoIdImg);
                 $("#" + destino + ">img").attr('id', origenIdImg);
 
+
                 /* Intercambio de textos */
 
-                var origenTextoImagen = $("#" + origen + ">.card-title>span").text();
-                var destinoTextoImagen = $("#" + destino + ">.card-title>span").text();
+                var origenTextoImagen = $("#" + origen + ">span>label").text();
+                var destinoTextoImagen = $("#" + destino + ">span>label").text();
 
-                $("#" + origen + ">.card-title>span").text(destinoTextoImagen);
-                $("#" + destino + ">.card-title>span").text(origenTextoImagen);
+                $("#" + origen + ">span>label").text(destinoTextoImagen);
+                $("#" + destino + ">span>label").text(origenTextoImagen);
 
                 /* Intercambio de ids en checkboxes y referencias de labels */
-                var origenCheck = $("#" + origen + ">.card-image>input").attr("id");
-                var destinoCheck = $("#" + destinoCaja + ">.card-image>input").attr("id");
+                var origenCheck = $("#" + origen + ">.card-title>input").attr("id");
+                var destinoCheck = $("#" + destino + ">.card-title>input").attr("id");
 
-                $("#" + origen + ">.card-image>input").attr("id", destinoCheck);
-                $("#" + origen + ">.card-image>label").attr('for',destinoCheck);
-                $("#" + destino + ">.card-image>input").attr("id", origenCheck);
-                $("#" + destino + ">.card-image>label").attr('for', origenCheck);
-
+                $("#" + origen + ">.card-title>input").attr("id", destinoCheck);
+                $("#" + destino + ">.card-title>input").attr("id", origenCheck);
+                
 
                 /* Intercambio de  iconos e ids booleanos */
 
-                var origenBool = $("#" + origen + ">.card-title>i").text();
-                var destinoBool = $("#" + destino + ">.card-title>i").text();
+                var origenBool = $("#" + origen + ">span>.setFavorite").text();
+                var destinoBool = $("#" + destino + ">span>.setFavorite").text();
 
-                $("#" + origen + ">.card-title>i").text(destinoBool);
-                $("#" + destino + ">.card-title>i").text(origenBool);
+                console.log(origenBool);
+                console.log(destinoBool);
 
-                var origenDataVal = $("#" + origen + ">.card-title>i").data("value");
-                var destinoDataVal = $("#" + destino + ">.card-title>i").data("value");
+                $("#" + origen + ">span>.setFavorite").text(destinoBool);
+                $("#" + destino + ">span>.setFavorite").text(origenBool);
 
-                $("#" + origen + ">.card-title>i").data("value", destinoDataVal);
-                $("#" + destino + ">.card-title>i").data("value", origenDataVal);
+                var origenDataVal = $("#" + origen + ">span>.setFavorite").data("value");
+                var destinoDataVal = $("#" + destino + ">span>.setFavorite").data("value");
+
+                $("#" + origen + ">span>.setFavorite").data("value", destinoDataVal);
+                $("#" + destino + ">span>.setFavorite").data("value", origenDataVal);
 
                 flagImg = true;
             });
@@ -338,26 +360,30 @@
                     {
                         foreach (PHOTO p in Model)
                         {
-                            <div class="card">
-                                <div class="card-image" id="div_@p.Id">
-                                    
-                                    
-                                    <img src="~/images/Session/@ViewBag.SessionName/@p.Picture" draggable="true" id="@p.Id" class="img triggerImage" />
-                                    <span class="card-title" style="width: 100%">
-                                        @if (p.Favorite)
-                                        {
-                                            <i class="material-icons setFavorite" style="color:red; float: left" data-value="@p.Id">favorite</i>
-                                        }
-                                        else
-                                        {
-                                            <i class="material-icons setFavorite" style="color:red; float: left" data-value="@p.Id">favorite_border</i>
-                                        }
-                                        <input type="checkbox" id="@p.Id" />
-                                        <label for="@p.Id"><span style="margin: 0 7em">@p.Picture</span></label>
-                                    </span>
+                    <div class="card">
+                        <div class="card-image" id="div_@p.Id">
 
-                                </div>
-                            </div>
+
+                            <img src="~/images/Session/@ViewBag.SessionName/@p.Picture" draggable="true" id="@p.Id" class="img triggerImage" />
+                            <span class="card-title card-title-foto" style="width: 100%">
+                                @if (p.Favorite)
+                                {
+                                    <i class="material-icons setFavorite" style="color:red; float: left" data-value="@p.Id">favorite</i>
+                                }
+                                else
+                                {
+                                    <i class="material-icons setFavorite" style="color:red; float: left" data-value="@p.Id">favorite_border</i>
+                                }
+                                <i class="material-icons check" style="color:white; float: left">check_box</i>
+                                <input type="checkbox" id="@p.Id" name="@p.Id" />
+                                <label class="toCheck"><span>@p.Picture</span></label>
+
+                            </span>
+
+                        </div>
+                        
+                    </div>
+                            
                         }
                     }
                     else
